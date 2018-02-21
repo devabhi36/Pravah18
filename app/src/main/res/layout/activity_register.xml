@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.abhinay.pravah.Register"
+    android:background="@drawable/register">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="FIRST NAME"
+        android:textSize="20dp"
+        android:layout_marginTop="47dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="LAST NAME"
+        android:textSize="20dp"
+        android:layout_marginTop="110dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DATE OF BIRTH"
+        android:textSize="20dp"
+        android:layout_marginTop="173dp"
+        android:onClick="dob"
+        android:id="@+id/dob"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="EMAIL- abc@def.com"
+        android:textSize="20dp"
+        android:layout_marginTop="236dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PASSWORD"
+        android:textSize="20dp"
+        android:layout_marginTop="299dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CONFIRM PASSWORD"
+        android:textSize="20dp"
+        android:layout_marginTop="362dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="MOBILE NUMBER"
+                android:textSize="20dp"
+                android:layout_marginTop="425dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="FATHER'S NAME"
+                android:textSize="20dp"
+                android:layout_marginTop="488dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="MOTHER'S NAME"
+                android:textSize="20dp"
+                android:layout_marginTop="551dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="AADHAR NO."
+                android:textSize="20dp"
+                android:layout_marginTop="614dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ZONE"
+                android:textSize="20dp"
+                android:layout_marginTop="677dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="COLLEGE NAME"
+                android:textSize="20dp"
+                android:layout_marginTop="740dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ROLL NO"
+                android:textSize="20dp"
+                android:layout_marginTop="803dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="REGISTER"
+                android:textStyle="bold"
+                android:onClick="submit"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="122dp"
+                android:layout_marginEnd="122dp"
+                android:layout_marginTop="866dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

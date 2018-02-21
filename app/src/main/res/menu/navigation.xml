@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title=""
+        android:id="@+id/iet"
+        android:icon="@drawable/iet" />
+    <item android:title=""
+        android:id="@+id/facebook"
+        android:icon="@drawable/facebook" />
+    <item android:title=""
+        android:id="@+id/youtube"
+        android:icon="@drawable/youtube1"/>
+    <item android:title=""
+        android:id="@+id/insta"
+        android:icon="@drawable/instagram"/>
+</menu>
