@@ -1,4 +1,4 @@
-
+// Adding another comment.
 package com.example.abhinay.pravah;
 
 
@@ -25,6 +25,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -33,12 +34,13 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    int flag=-1;
+    public static int flag=-1;
     ViewPager mViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(Window.FEATURE_SWIPE_TO_DISMISS);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         home(null);
@@ -350,29 +352,29 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
         flag=1;
     }
-        public void submit(View view1){
-        Toast.makeText(getApplicationContext(), "WELCOME", Toast.LENGTH_SHORT).show();
-
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        flag = 1;
-
-            NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
-            Menu menuNav=navigationView.getMenu();
-
-            MenuItem register = menuNav.findItem(R.id.register);
-            register.setVisible(false);
-
-            MenuItem dashboard = menuNav.findItem(R.id.dashboard);
-            dashboard.setVisible(true);
-
-            MenuItem sign_in = menuNav.findItem(R.id.sign_in);
-            sign_in.setVisible(false);
-
-            MenuItem sign_out = menuNav.findItem(R.id.sign_out);
-            sign_out.setVisible(true);
-
-        }
+//        public void submit(View view1){
+//        Toast.makeText(getApplicationContext(), "WELCOME", Toast.LENGTH_SHORT).show();
+//
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//        flag = 1;
+//
+//            NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
+//            Menu menuNav=navigationView.getMenu();
+//
+//            MenuItem register = menuNav.findItem(R.id.register);
+//            register.setVisible(false);
+//
+//            MenuItem dashboard = menuNav.findItem(R.id.dashboard);
+//            dashboard.setVisible(true);
+//
+//            MenuItem sign_in = menuNav.findItem(R.id.sign_in);
+//            sign_in.setVisible(false);
+//
+//            MenuItem sign_out = menuNav.findItem(R.id.sign_out);
+//            sign_out.setVisible(true);
+//
+//        }
     public void sign_in(View sign_in){
         Toast.makeText(this,"Go to Sign In Page", Toast.LENGTH_SHORT).show();
     }
