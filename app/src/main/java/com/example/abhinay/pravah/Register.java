@@ -43,7 +43,8 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     String[] gender = { " MALE", " FEMALE", " OTHER",};
     String[] youare = { " PARTICIPANT", " ACCOMPANYING FACULTY"," OTHERS",};
     String[] zone = { " AGRA", " ALLAHABAD", " BAREILLY", " GAUTAM BUDH NAGAR", " GHAZIABAD", " GORAKHPUR", " LUCKNOW", " MEERUT",};
-    @Override
+
+  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);

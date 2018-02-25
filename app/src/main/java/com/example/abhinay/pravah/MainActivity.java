@@ -353,9 +353,10 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
         flag=1;
     }
-
     public void sign_in(View sign_in){
-        Toast.makeText(this,"Go to Sign In Page", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, Login.class);
+        startActivity(intent);
+        flag=1;
     }
     public void sponcer(View sponcer){
         Toast.makeText(getApplicationContext(),"Show Sponcers", Toast.LENGTH_SHORT).show();
