@@ -19,86 +19,124 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="FIRST NAME"
-        android:textSize="20dp"
-        android:layout_marginTop="47dp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="LAST NAME"
-        android:textSize="20dp"
-        android:layout_marginTop="110dp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="DATE OF BIRTH"
-        android:textSize="20dp"
-        android:layout_marginTop="173dp"
-        android:onClick="dob"
-        android:id="@+id/dob"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="EMAIL- abc@def.com"
-        android:textSize="20dp"
-        android:layout_marginTop="236dp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="PASSWORD"
-        android:textSize="20dp"
-        android:layout_marginTop="299dp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="CONFIRM PASSWORD"
-        android:textSize="20dp"
-        android:layout_marginTop="362dp" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/firstname"
+                android:hint="FIRST NAME"
+                android:textSize="20dp"
+                android:text="sas"
+                android:layout_marginTop="47dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lastname"
+                android:hint="LAST NAME"
+                android:text="saff"
+                android:textSize="20dp"
+                android:layout_marginTop="110dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dob"
+                android:hint="DATE OF BIRTH"
+                android:textSize="20dp"
+                android:text="Dec 27, 1996"
+                android:layout_marginTop="173dp"
+                android:onClick="dob" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:hint="EMAIL- abc@def.com"
+                android:textSize="20dp"
+                android:text="email@gmail.com"
+                android:layout_marginTop="236dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:hint="PASSWORD"
+                android:text="pas"
+                android:textSize="20dp"
+                android:layout_marginTop="299dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="pas"
+                android:hint="CONFIRM PASSWORD"
+                android:id="@+id/cpassword"
+                android:textSize="20dp"
+                android:layout_marginTop="362dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mobile"
                 android:hint="MOBILE NUMBER"
+                android:text="9891194241"
                 android:textSize="20dp"
                 android:layout_marginTop="425dp" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/fathername"
                 android:hint="FATHER'S NAME"
+                android:text="father"
                 android:textSize="20dp"
                 android:layout_marginTop="488dp" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/mothername"
                 android:hint="MOTHER'S NAME"
                 android:textSize="20dp"
+                android:text="mother"
                 android:layout_marginTop="551dp" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="AADHAR NO."
+                android:id="@+id/aadhaar"
+                android:hint="AADHAAR NO."
+                android:text="12341234"
                 android:textSize="20dp"
                 android:layout_marginTop="614dp" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/zone"
                 android:hint="ZONE"
+                android:text="1"
                 android:textSize="20dp"
                 android:layout_marginTop="677dp" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/college"
                 android:hint="COLLEGE NAME"
                 android:textSize="20dp"
+                android:text="ietlko"
                 android:layout_marginTop="740dp" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/rollno"
                 android:hint="ROLL NO"
+                android:text="1605210018"
                 android:textSize="20dp"
                 android:layout_marginTop="803dp" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -111,7 +149,6 @@
                 android:layout_marginRight="122dp"
                 android:layout_marginEnd="122dp"
                 android:layout_marginTop="866dp"/>
-
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
