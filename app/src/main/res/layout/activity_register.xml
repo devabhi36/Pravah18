@@ -19,81 +19,136 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="FIRST NAME"
-        android:textSize="20dp"
-        android:layout_marginTop="60dp"
-        android:id="@+id/firstname"
-        android:textColorHint="#ffffff"
-        android:textColor="#ffffff"
-        android:textStyle="italic"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="LAST NAME"
-        android:textSize="20dp"
-        android:layout_marginTop="123dp"
-        android:id="@+id/lastname"
-        android:textColorHint="#ffffff"
-        android:textColor="#ffffff"
-        android:textStyle="italic"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="DATE OF BIRTH"
-        android:textSize="20dp"
-        android:layout_marginTop="186dp"
-        android:onClick="dob"
-        android:id="@+id/dob"
-        android:textColorHint="#ffffff"
-        android:textColor="#ffffff"
-        android:textStyle="italic"/>
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="249dp"
-                android:textSize="30dp"
-                android:id="@+id/gender"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
-                android:textStyle="italic"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="EMAIL- abc@def.com"
-        android:textSize="20dp"
-        android:layout_marginTop="279dp"
-        android:id="@+id/email"
-        android:textColorHint="#ffffff"
-        android:textColor="#ffffff"
-        android:textStyle="italic"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="PASSWORD"
-        android:textSize="20dp"
-        android:layout_marginTop="342dp"
-        android:id="@+id/password"
-        android:inputType="textPassword"
-        android:textColorHint="#ffffff"
-        android:textColor="#ffffff"
-        android:textStyle="italic"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="CONFIRM PASSWORD"
-        android:textSize="20dp"
-        android:layout_marginTop="405dp"
-        android:id="@+id/cpassword"
-        android:inputType="textPassword"
-        android:textColorHint="#ffffff"
-        android:textColor="#ffffff"
-        android:textStyle="italic"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="FIRST NAME"
+                android:textSize="20dp"
+                android:layout_marginTop="60dp"
+                android:id="@+id/firstname"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="LAST NAME"
+                android:textSize="20dp"
+                android:layout_marginTop="123dp"
+                android:id="@+id/lastname"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="DATE OF BIRTH"
+                android:textSize="20dp"
+                android:layout_marginTop="186dp"
+                android:onClick="dob"
+                android:id="@+id/dob"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <Spinner
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="249dp"
+               android:textSize="30dp"
+               android:id="@+id/gender"
+               android:textColorHint="#ffffff"
+               android:textColor="#ffffff"
+               android:textStyle="italic"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="EMAIL- abc@def.com"
+                android:textSize="20dp"
+                android:layout_marginTop="279dp"
+                android:id="@+id/email"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PASSWORD"
+                android:textSize="20dp"
+                android:layout_marginTop="342dp"
+                android:id="@+id/password"
+                android:inputType="textPassword"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CONFIRM PASSWORD"
+                android:textSize="20dp"
+                android:layout_marginTop="405dp"
+                android:id="@+id/cpassword"
+                android:inputType="textPassword"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/firstname"
+                android:hint="FIRST NAME"
+                android:textSize="20dp"
+                android:layout_marginTop="47dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lastname"
+                android:hint="LAST NAME"
+                android:textSize="20dp"
+                android:layout_marginTop="110dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dob"
+                android:hint="DATE OF BIRTH"
+                android:textSize="20dp"
+                android:layout_marginTop="173dp"
+                android:onClick="dob" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:hint="EMAIL- abc@def.com"
+                android:textSize="20dp"
+                android:layout_marginTop="236dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:hint="PASSWORD"
+                android:textSize="20dp"
+                android:layout_marginTop="299dp" />
+
+             <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CONFIRM PASSWORD"
+                android:id="@+id/cpassword"
+                android:textSize="20dp"
+                android:layout_marginTop="362dp" />
+
+             <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mobile"
                 android:hint="MOBILE NUMBER"
                 android:textSize="20dp"
                 android:layout_marginTop="468dp"
@@ -101,6 +156,7 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
+          
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,9 +166,11 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
+          
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/fathername"
                 android:hint="FATHER'S NAME"
                 android:textSize="20dp"
                 android:layout_marginTop="561dp"
@@ -120,9 +178,11 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
+          
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/mothername"
                 android:hint="MOTHER'S NAME"
                 android:textSize="20dp"
                 android:layout_marginTop="624dp"
@@ -130,16 +190,19 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
+          
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="AADHAR NO."
+                android:id="@+id/aadhaar"
+                android:hint="AADHAAR NO."
                 android:textSize="20dp"
                 android:layout_marginTop="687dp"
                 android:id="@+id/aadhar"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
+            
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,9 +212,11 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
+          
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/college"
                 android:hint="COLLEGE NAME"
                 android:textSize="20dp"
                 android:layout_marginTop="780dp"
@@ -159,9 +224,11 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
+          
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/rollno"
                 android:hint="ROLL NO"
                 android:textSize="20dp"
                 android:layout_marginTop="843dp"
@@ -169,6 +236,7 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
+          
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
