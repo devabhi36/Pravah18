@@ -40,9 +40,9 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     EditText firstname, lastname, dob, email, password, cpassword, mobile, fathername, mothername, aadhaar, rollno, college;
     int gen, you, zon;
 
-    String[] gender = { "Male", "Female", "Other",};
-    String[] youare = { "Participant", "Accompanying Faculty","Others",};
-    String[] zone = { "Agra", "Allahabad", "Bareilly", "Gautum Buddh Nagar", "Ghaziabad", "Gorakhpur", "Lucknow", "Meerut",};
+    String[] gender = { " MALE", " FEMALE", " OTHER",};
+    String[] youare = { " PARTICIPANT", " ACCOMPANYING FACULTY"," OTHERS",};
+    String[] zone = { " AGRA", " ALLAHABAD", " BAREILLY", " GAUTAM BUDH NAGAR", " GHAZIABAD", " GORAKHPUR", " LUCKNOW", " MEERUT",};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,18 +53,18 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         youareS = (Spinner)findViewById(R.id.areyou);
         zoneS = (Spinner)findViewById(R.id.zone);
 
-        genderA = new ArrayAdapter(this,android.R.layout.simple_spinner_item, gender);
-        genderA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genderA = new ArrayAdapter(this, R.layout.spinner_item_text, gender);
+        genderA.setDropDownViewResource(R.layout.spinner_dropdown_text);
         genderS.setAdapter(genderA);
         genderS.setOnItemSelectedListener(new genderSpinnerClass());
 
-        youareA = new ArrayAdapter(this,android.R.layout.simple_spinner_item, youare);
-        youareA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        youareA = new ArrayAdapter(this, R.layout.spinner_item_text, youare);
+        youareA.setDropDownViewResource(R.layout.spinner_dropdown_text);
         youareS.setAdapter(youareA);
         youareS.setOnItemSelectedListener(new youAreSpinnerClass());
 
-        zoneA = new ArrayAdapter(this,android.R.layout.simple_spinner_item,zone);
-        zoneA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        zoneA = new ArrayAdapter(this, R.layout.spinner_item_text, zone);
+        zoneA.setDropDownViewResource(R.layout.spinner_dropdown_text);
         zoneS.setAdapter(zoneA);
         zoneS.setOnItemSelectedListener(new zoneSpinnerClass());
 
