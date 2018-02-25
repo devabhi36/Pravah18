@@ -96,55 +96,6 @@
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/firstname"
-                android:hint="FIRST NAME"
-                android:textSize="20dp"
-                android:layout_marginTop="47dp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lastname"
-                android:hint="LAST NAME"
-                android:textSize="20dp"
-                android:layout_marginTop="110dp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/dob"
-                android:hint="DATE OF BIRTH"
-                android:textSize="20dp"
-                android:layout_marginTop="173dp"
-                android:onClick="dob" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/email"
-                android:hint="EMAIL- abc@def.com"
-                android:textSize="20dp"
-                android:layout_marginTop="236dp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/password"
-                android:hint="PASSWORD"
-                android:textSize="20dp"
-                android:layout_marginTop="299dp" />
-
-             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="CONFIRM PASSWORD"
-                android:id="@+id/cpassword"
-                android:textSize="20dp"
-                android:layout_marginTop="362dp" />
-
              <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -152,7 +103,6 @@
                 android:hint="MOBILE NUMBER"
                 android:textSize="20dp"
                 android:layout_marginTop="468dp"
-                android:id="@+id/mobile"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -174,7 +124,6 @@
                 android:hint="FATHER'S NAME"
                 android:textSize="20dp"
                 android:layout_marginTop="561dp"
-                android:id="@+id/fathername"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -186,7 +135,6 @@
                 android:hint="MOTHER'S NAME"
                 android:textSize="20dp"
                 android:layout_marginTop="624dp"
-                android:id="@+id/mothername"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -198,7 +146,6 @@
                 android:hint="AADHAAR NO."
                 android:textSize="20dp"
                 android:layout_marginTop="687dp"
-                android:id="@+id/aadhar"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -220,7 +167,6 @@
                 android:hint="COLLEGE NAME"
                 android:textSize="20dp"
                 android:layout_marginTop="780dp"
-                android:id="@+id/college"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -232,7 +178,6 @@
                 android:hint="ROLL NO"
                 android:textSize="20dp"
                 android:layout_marginTop="843dp"
-                android:id="@+id/roll"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>

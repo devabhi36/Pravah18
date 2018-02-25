@@ -37,7 +37,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     
     public int flag = MainActivity.flag;
 
-    EditText firstname, lastname, dob, email, password, cpassword, mobile, fathername, mothername, aadhaar, zone, rollno, college;
+    EditText firstname, lastname, dob, email, password, cpassword, mobile, fathername, mothername, aadhaar, rollno, college;
 
     String[] gender = {"Gender", "Male", "Female", "Other",};
     String[] youare = {"ARE YOU", "Participant", "Accompanying Faculty","Others",};
@@ -72,7 +72,6 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         fathername = (EditText)findViewById(R.id.fathername);
         mothername = (EditText)findViewById(R.id.mothername);
         aadhaar = (EditText)findViewById(R.id.aadhaar);
-        zone = (EditText)findViewById(R.id.zone);
         rollno = (EditText)findViewById(R.id.rollno);
         college = (EditText)findViewById(R.id.college);
     }
@@ -157,7 +156,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
 
             int valueZone;
             try {
-                valueZone = Integer.parseInt(zone.getText().toString());
+                valueZone = Integer.parseInt(zone.toString());
             } catch (NumberFormatException e) {
                 Toast.makeText(this, "Script error, try again.", Toast.LENGTH_SHORT).show();
                 return;
