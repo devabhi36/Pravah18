@@ -47,7 +47,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_register);
-        
+
         genderS = (Spinner)findViewById(R.id.gender);
         youareS = (Spinner)findViewById(R.id.areyou);
         zoneS = (Spinner)findViewById(R.id.zone);
