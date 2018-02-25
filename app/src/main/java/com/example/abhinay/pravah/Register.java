@@ -38,29 +38,35 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     public int flag = MainActivity.flag;
 
     EditText firstname, lastname, dob, email, password, cpassword, mobile, fathername, mothername, aadhaar, rollno, college;
+    int gen, you, zon;
 
-    String[] gender = {"Gender", "Male", "Female", "Other",};
-    String[] youare = {"ARE YOU", "Participant", "Accompanying Faculty","Others",};
-    String[] zone = {"Zone", "Agra", "Allahabad", "Bareilly", "Gautum Buddh Nagar", "Ghaziabad", "Gorakhpur", "Lucknow", "Meerut",};
+    String[] gender = { " MALE", " FEMALE", " OTHER",};
+    String[] youare = { " PARTICIPANT", " ACCOMPANYING FACULTY"," OTHERS",};
+    String[] zone = { " AGRA", " ALLAHABAD", " BAREILLY", " GAUTAM BUDH NAGAR", " GHAZIABAD", " GORAKHPUR", " LUCKNOW", " MEERUT",};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_register);
-
+        
         genderS = (Spinner)findViewById(R.id.gender);
         youareS = (Spinner)findViewById(R.id.areyou);
         zoneS = (Spinner)findViewById(R.id.zone);
 
-        genderA = new ArrayAdapter(this,android.R.layout.simple_spinner_item, gender);
-        genderA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genderA = new ArrayAdapter(this, R.layout.spinner_item_text, gender);
+        genderA.setDropDownViewResource(R.layout.spinner_dropdown_text);
         genderS.setAdapter(genderA);
-        youareA = new ArrayAdapter(this,android.R.layout.simple_spinner_item, youare);
-        youareA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genderS.setOnItemSelectedListener(new genderSpinnerClass());
+
+        youareA = new ArrayAdapter(this, R.layout.spinner_item_text, youare);
+        youareA.setDropDownViewResource(R.layout.spinner_dropdown_text);
         youareS.setAdapter(youareA);
-        zoneA = new ArrayAdapter(this,android.R.layout.simple_spinner_item,zone);
-        zoneA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        youareS.setOnItemSelectedListener(new youAreSpinnerClass());
+
+        zoneA = new ArrayAdapter(this, R.layout.spinner_item_text, zone);
+        zoneA.setDropDownViewResource(R.layout.spinner_dropdown_text);
         zoneS.setAdapter(zoneA);
+        zoneS.setOnItemSelectedListener(new zoneSpinnerClass());
 
         firstname = (EditText)findViewById(R.id.firstname);
         lastname = (EditText)findViewById(R.id.lastname);
@@ -76,16 +82,17 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         college = (EditText)findViewById(R.id.college);
     }
 
-    public class dataBundle {
+    private class dataBundle {
 
         String f, l, d, e, p, fa, mo, c, m, a, ro;
-        int z;
+        int g, z, y;
 
-        public dataBundle (String f, String l, String d, String e, String p, String fa, String mo, String c, String m, String a, String ro, int z){
+        private dataBundle (String f, String l, String d, String e, int g, String p, String fa, String mo, String c, String m, String a, String ro, int z, int y){
             this.f = f;
             this.l = l;
             this.d = d;
             this.e = e;
+            this.g = g;
             this.p = p;
             this.fa = fa;
             this.mo = mo;
@@ -94,6 +101,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
             this.a = a;
             this.ro = ro;
             this.z = z;
+            this.y = y;
         }
     }
 
@@ -154,15 +162,11 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
                 return;
             }
 
-            int valueZone;
-            try {
-                valueZone = Integer.parseInt(zone.toString());
-            } catch (NumberFormatException e) {
-                Toast.makeText(this, "Script error, try again.", Toast.LENGTH_SHORT).show();
-                return;
-            }
+            int valueZone = zon;
+            int valueGender = gen;
+            int valueYouAre = you;
 
-            dataBundle bundle = new dataBundle(valueFirstname, valueLastname, valueDob, valueEmail, valuePassword, valueFather, valueMother, valueCollege, valueMobile, valueAadhar, valueRollno, valueZone);
+            dataBundle bundle = new dataBundle(valueFirstname, valueLastname, valueDob, valueEmail, valueGender, valuePassword, valueFather, valueMother, valueCollege, valueMobile, valueAadhar, valueRollno, valueZone, valueYouAre);
             new AsyncCaller().execute(bundle);
         }
         else
@@ -191,7 +195,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
             return "0" + String.valueOf( ( i + 1 ) );
     }
 
-    public class AsyncCaller extends AsyncTask<dataBundle, Void, String> {
+    private class AsyncCaller extends AsyncTask<dataBundle, Void, String> {
 
         @Override
         protected void onPreExecute() {
@@ -204,6 +208,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
             String lname = data[0].l;
             String dob = data[0].d;
             String em = data[0].e;
+            int ge = (data[0].g + 1);
             String pass = data[0].p;
             String papa = data[0].fa;
             String mama = data[0].mo;
@@ -211,12 +216,13 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
             String mob = data[0].m;
             String aad = data[0].a;
             String roll = data[0].ro;
-            int zo = data[0].z;
+            int zo = (data[0].z + 1);
+            int yo = (data[0].y + 1);
 
             try{
 
                 String link = "http://192.168.43.239/index.php";
-                String data_  = URLEncoder.encode("firstname", "UTF-8") + "=" + URLEncoder.encode(fname, "UTF-8") + "&" + URLEncoder.encode("lastname", "UTF-8") + "=" + URLEncoder.encode(lname, "UTF-8") + "&" + URLEncoder.encode("dob", "UTF-8") + "=" + URLEncoder.encode(dob, "UTF-8") + "&" + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(em, "UTF-8") + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8") + "&" + URLEncoder.encode("fathername", "UTF-8") + "=" + URLEncoder.encode(papa, "UTF-8") + "&" + URLEncoder.encode("mothername", "UTF-8") + "=" + URLEncoder.encode(mama, "UTF-8") + "&" + URLEncoder.encode("college", "UTF-8") + "=" + URLEncoder.encode(col, "UTF-8")+ "&" + URLEncoder.encode("phone", "UTF-8") + "=" + URLEncoder.encode(mob, "UTF-8") + "&" + URLEncoder.encode("aadhaar", "UTF-8") + "=" + URLEncoder.encode(aad, "UTF-8")+ "&" + URLEncoder.encode("rollno", "UTF-8") + "=" + URLEncoder.encode(roll, "UTF-8")+ "&" + URLEncoder.encode("zone", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(zo), "UTF-8");
+                String data_  = URLEncoder.encode("firstname", "UTF-8") + "=" + URLEncoder.encode(fname, "UTF-8") + "&" + URLEncoder.encode("lastname", "UTF-8") + "=" + URLEncoder.encode(lname, "UTF-8") + "&" + URLEncoder.encode("dob", "UTF-8") + "=" + URLEncoder.encode(dob, "UTF-8") + "&" + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(em, "UTF-8") + "&" + URLEncoder.encode("gender", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(ge), "UTF-8") +"&"+ URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8") + "&" + URLEncoder.encode("fathername", "UTF-8") + "=" + URLEncoder.encode(papa, "UTF-8") + "&" + URLEncoder.encode("mothername", "UTF-8") + "=" + URLEncoder.encode(mama, "UTF-8") + "&" + URLEncoder.encode("college", "UTF-8") + "=" + URLEncoder.encode(col, "UTF-8")+ "&" + URLEncoder.encode("phone", "UTF-8") + "=" + URLEncoder.encode(mob, "UTF-8") + "&" + URLEncoder.encode("aadhaar", "UTF-8") + "=" + URLEncoder.encode(aad, "UTF-8")+ "&" + URLEncoder.encode("rollno", "UTF-8") + "=" + URLEncoder.encode(roll, "UTF-8")+ "&" + URLEncoder.encode("zone", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(zo), "UTF-8") + "&" + URLEncoder.encode("youare", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(yo), "UTF-8");
 
                 URL url = new URL(link);
                 URLConnection conn = url.openConnection();
@@ -251,6 +257,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
 
             if ( result.equals("Registration successful.") )
             {
+                /*
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
 
@@ -268,6 +275,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
 
                 MenuItem sign_out = menuNav.findItem(R.id.sign_out);
                 sign_out.setVisible(true);
+                */
 
                 flag = 1;
             }
@@ -291,14 +299,48 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         setDate(cal);
     }
 
-    @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
     }
 
-    @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    private class genderSpinnerClass implements AdapterView.OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            gen = position;
+        }
+
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    }
+
+    private class youAreSpinnerClass implements AdapterView.OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            you = position;
+        }
+
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    }
+
+    private class zoneSpinnerClass implements AdapterView.OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            zon = position;
+        }
+
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
     }
 
     public static class DatePickerFragment extends DialogFragment{
