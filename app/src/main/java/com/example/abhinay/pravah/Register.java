@@ -11,10 +11,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.support.v4.app.DialogFragment;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -27,16 +31,36 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class Register extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
-
+public class Register extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, AdapterView.OnItemSelectedListener{
+    ArrayAdapter genderA, youareA, zoneA;
+    Spinner genderS, youareS, zoneS;
+    
     public int flag = MainActivity.flag;
 
     EditText firstname, lastname, dob, email, password, cpassword, mobile, fathername, mothername, aadhaar, zone, rollno, college;
 
+    String[] gender = {"Gender", "Male", "Female", "Other",};
+    String[] youare = {"ARE YOU", "Participant", "Accompanying Faculty","Others",};
+    String[] zone = {"Zone", "Agra", "Allahabad", "Bareilly", "Gautum Buddh Nagar", "Ghaziabad", "Gorakhpur", "Lucknow", "Meerut",};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_register);
+        
+        genderS = (Spinner)findViewById(R.id.gender);
+        youareS = (Spinner)findViewById(R.id.areyou);
+        zoneS = (Spinner)findViewById(R.id.zone);
+
+        genderA = new ArrayAdapter(this,android.R.layout.simple_spinner_item, gender);
+        genderA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genderS.setAdapter(genderA);
+        youareA = new ArrayAdapter(this,android.R.layout.simple_spinner_item, youare);
+        youareA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        youareS.setAdapter(youareA);
+        zoneA = new ArrayAdapter(this,android.R.layout.simple_spinner_item,zone);
+        zoneA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        zoneS.setAdapter(zoneA);
 
         firstname = (EditText)findViewById(R.id.firstname);
         lastname = (EditText)findViewById(R.id.lastname);
@@ -266,6 +290,16 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     public void onDateSet(DatePicker view, int day, int month, int year) {
         Calendar cal = new GregorianCalendar(day, month, year);
         setDate(cal);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     public static class DatePickerFragment extends DialogFragment{
