@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -70,11 +71,17 @@ public class PRAVAH extends Fragment {
                  switch (item.getItemId()){
                 case R.id.iet: Toast.makeText(getContext(), "IET", Toast.LENGTH_SHORT).show();
                     return true;
-                case R.id.facebook: Toast.makeText(getContext(), "FB", Toast.LENGTH_SHORT).show();
+                case R.id.facebook: String fb = "https://www.facebook.com/aktu.pravah/";
+                    WebView facebook = new WebView(getContext());
+                    facebook.loadUrl(fb);
                     return true;
-                case R.id.youtube: Toast.makeText(getContext(), "Youtube", Toast.LENGTH_SHORT).show();
+                case R.id.youtube: String yt = "https://www.youtube.com/channel/UCRb5zwmzj8VFdi5FRhZyTyg";
+                    WebView youtube = new WebView(getContext());
+                    youtube.loadUrl(yt);
                     return true;
-                case R.id.insta: Toast.makeText(getContext(), "Insta", Toast.LENGTH_SHORT).show();
+                case R.id.insta: String insta = "https://www.instagram.com/pravah.aktu/";
+                    WebView instagram = new WebView(getContext());
+                    instagram.loadUrl(insta);
                     return true;
             }
                  return false;

@@ -131,6 +131,7 @@
                 android:value="@integer/google_play_services_version" />
         </activity>
         <activity android:name=".Register"></activity>
+        <activity android:name=".Login"></activity>
     </application>
 
 </manifest>
