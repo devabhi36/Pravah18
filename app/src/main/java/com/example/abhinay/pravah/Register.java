@@ -153,6 +153,12 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
                 return;
             }
 
+            if (valuePassword.length() < 8) {
+                Toast.makeText(this, "Password should be atleast 8 characters long!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+
             if (valueMobile.length() != 10) {
                 Toast.makeText(this, "Phone number must consist of 10 digits.", Toast.LENGTH_SHORT).show();
                 return;
@@ -258,10 +264,10 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
 
             if ( result.equals("Registration successful.") )
             {
-                /*
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
 
+                /*
                 NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
                 Menu menuNav=navigationView.getMenu();
 
