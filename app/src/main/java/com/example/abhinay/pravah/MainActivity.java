@@ -5,12 +5,6 @@ package com.example.abhinay.pravah;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -24,13 +18,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.Toast;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -185,6 +174,8 @@ public class MainActivity extends AppCompatActivity
             gallery(null);
         } else if(id == R.id.map1){
             map(null);
+        } else if(id == R.id.dashboard){
+            Toast.makeText(getApplicationContext(), "OK SHOWN", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.register) {
             register(null);
         } else if(id == R.id.sign_in) {
@@ -195,7 +186,7 @@ public class MainActivity extends AppCompatActivity
             feedback(null);
         } else if (id == R.id.about1) {
             about(null);
-        } else if(id == R.id.sponcer){
+        } else if(id == R.id.sponsor){
             sponcer(null);
         } else if (id == R.id.contact1) {
             contact(null);

@@ -1,9 +1,6 @@
 package com.example.abhinay.pravah;
 
 import android.content.Context;
-import android.content.Intent;
-import android.provider.ContactsContract;
-import android.support.v4.media.RatingCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -11,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 /**
  * Created by Abhinay on 22-01-2018.
@@ -30,14 +26,14 @@ public class SlideShow extends PagerAdapter {
         return view==((ImageView)object);
     }
 
-    private int[] imagesliderID=new int[]{R.drawable.img5, R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4};
+    private int[] imagesliderID=new int[]{R.drawable.img3, R.drawable.img4, R.drawable.img2};
 
 
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
 
         ImageView imageView = new ImageButton(mContext);
-        imageView.setScaleType(ImageButton.ScaleType.CENTER_CROP);
+        imageView.setScaleType(ImageButton.ScaleType.FIT_START);
         imageView.setImageResource(imagesliderID[position]);
 
 
