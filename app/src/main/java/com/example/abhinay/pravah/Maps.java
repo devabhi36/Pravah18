@@ -28,7 +28,7 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Click on the red marker to get directions.")
-                .setCancelable(false)
+                .setCancelable(true)
                 .setNeutralButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -43,6 +43,7 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
 
 

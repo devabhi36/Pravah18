@@ -144,16 +144,14 @@ public class Schedule extends AppCompatActivity {
                     return day1;
                 case 1: Day2 day2=new Day2();
                     return day2;
-                case 2: Day3 day3=new Day3();
-                    return day3;
             }
             return null;
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 2 total pages.
+            return 2;
         }
 
         @Override
@@ -163,8 +161,6 @@ public class Schedule extends AppCompatActivity {
                     return "Day 1";
                 case 1:
                     return "Day 2";
-                case 2:
-                    return "Day 3";
             }
             return null;
         }

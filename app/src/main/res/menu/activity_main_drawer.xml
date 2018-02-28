@@ -19,15 +19,36 @@
             android:icon="@drawable/ic_schedule_black_48dp"
             android:title="Schedule" />
         <item
-            android:id="@+id/gallery1"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+        android:id="@+id/gallery1"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="Gallery" />
         <item
             android:id="@+id/map1"
             android:icon="@drawable/ic_maps_black_48dp"
             android:title="Map" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_maps_black_48dp"
+            android:title="Profile"
+            android:visible="false"/>
+        <item
+            android:id="@+id/changepass"
+            android:icon="@drawable/ic_maps_black_48dp"
+            android:title="Change Password"
+            android:visible="false"/>
+        <item
+            android:id="@+id/team"
+            android:icon="@drawable/ic_maps_black_48dp"
+            android:title="Team"
+            android:visible="false"/>
+        <item
+            android:id="@+id/accomadation"
+            android:icon="@drawable/ic_maps_black_48dp"
+            android:title="Accomadation"
+            android:visible="false"/>
     </group>
-    <item android:title="Join Us">
+    <item android:title="Join Us"
+        android:id="@+id/join">
         <menu>
             <item
                 android:id="@+id/register"
@@ -44,11 +65,13 @@
             <item
                 android:id="@+id/sign_out"
                 android:icon="@drawable/ic_assignment_ind_black_48dp"
-                android:title="Sign Out" />
+                android:title="Sign Out"
+                android:visible="false"/>
         </menu>
     </item>
 
-    <item android:title="By You">
+    <item android:title="By You"
+        android:id="@+id/by_you">
         <menu>
             <item
                 android:id="@+id/post1"
@@ -61,14 +84,15 @@
         </menu>
     </item>
 
-    <item android:title="About Us">
+    <item android:title="About Us"
+        android:id="@+id/about_us">
         <menu>
             <item
                 android:id="@+id/about1"
                 android:icon="@drawable/ic_about_black_48dp"
                 android:title="About" />
             <item
-                android:id="@+id/sponcer"
+                android:id="@+id/sponsor"
                 android:icon="@drawable/ic_sponsors_on_black_48dp"
                 android:title="Sponsors" />
             <item

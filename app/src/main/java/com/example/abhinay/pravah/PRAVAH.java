@@ -62,14 +62,17 @@ public class PRAVAH extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle("PRAVAH 18");
+        getActivity().setTitle("प्रवाह'18");
+
          BottomNavigationView navigation = (BottomNavigationView)view.findViewById(R.id.navigation);
          navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
              @Override
              public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                  switch (item.getItemId()){
-                case R.id.iet: Toast.makeText(getContext(), "IET", Toast.LENGTH_SHORT).show();
+                case R.id.web: String web = "https://aktu.ac.in/pravah/contact.html";
+                    WebView website = new WebView(getContext());
+                    website.loadUrl(web);
                     return true;
                 case R.id.facebook: String fb = "https://www.facebook.com/aktu.pravah/";
                     WebView facebook = new WebView(getContext());
