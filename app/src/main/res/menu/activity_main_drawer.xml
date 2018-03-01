@@ -49,20 +49,23 @@
             <item
                 android:id="@+id/register"
                 android:icon="@drawable/ic_register_48dp"
-                android:title="Register" />
+                android:title="Register"
+                android:visible="true"/>
             <item
                 android:id="@+id/dashboard"
-                android:icon="@drawable/dashboard"
-                android:title="Dashboard" />
+                android:icon="@drawable/ic_register_48dp"
+                android:title="Dashboard"
+                android:visible="true"/>
             <item
                 android:id="@+id/sign_in"
                 android:icon="@drawable/ic_assignment_ind_black_48dp"
-                android:title="Sign In" />
+                android:title="Sign In"
+                android:visible="true"/>
             <item
                 android:id="@+id/sign_out"
                 android:icon="@drawable/ic_assignment_ind_black_48dp"
                 android:title="Sign Out"
-                android:visible="false"/>
+                android:visible="true"/>
         </menu>
     </item>
 

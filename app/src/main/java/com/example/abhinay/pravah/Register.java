@@ -36,8 +36,6 @@ import java.util.GregorianCalendar;
 public class Register extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, AdapterView.OnItemSelectedListener{
     ArrayAdapter genderA, youareA, zoneA;
     Spinner genderS, youareS, zoneS;
-    
-    public int flag = MainActivity.flag;
 
     EditText firstname, lastname, dob, email, password, cpassword, mobile, fathername, mothername, aadhaar, rollno, college;
     int gen, you, zon;
@@ -277,31 +275,22 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
 
         @Override
         protected void onPostExecute(String result) {
-            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-
             if ( result.equals("Registration successful.") )
             {
-                /*
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Toast.makeText(getApplicationContext(), result + " You may now log in using your details.", Toast.LENGTH_SHORT).show();
+
+                MainActivity.flag = 1;
+
+                Intent intent = new Intent(Register.this, MainActivity.class);
                 startActivity(intent);
-
-                NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
-                Menu menuNav=navigationView.getMenu();
-
-                MenuItem register = menuNav.findItem(R.id.register);
-                register.setVisible(false);
-
-                MenuItem dashboard = menuNav.findItem(R.id.dashboard);
-                dashboard.setVisible(true);
-
-                MenuItem sign_in = menuNav.findItem(R.id.sign_in);
-                sign_in.setVisible(false);
-
-                MenuItem sign_out = menuNav.findItem(R.id.sign_out);
-                sign_out.setVisible(true);
-                */
-
-                flag = 1;
+            }
+            else if ( result.equals("An account with the given email is already registered!") )
+            {
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Databse error.", Toast.LENGTH_SHORT).show();
             }
         }
 
