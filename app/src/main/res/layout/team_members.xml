@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="100dp"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp">
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Team Members Are:"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-70dp"/>
+
+                <TextView
+                    android:id="@+id/m1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Member 1"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-30dp"/>
+                <TextView
+                    android:id="@+id/m2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Member 2"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"/>
+                <TextView
+                    android:id="@+id/m3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Member 3"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"/>
+                <TextView
+                    android:id="@+id/m4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Member 4"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="60dp"/>
+                <TextView
+                    android:id="@+id/m5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Member 5"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="90dp"/>
+
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+
+    </RelativeLayout>
