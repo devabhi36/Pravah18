@@ -130,11 +130,12 @@
                 android:name="com.google.android.gms.version"
                 android:value="@integer/google_play_services_version" />
         </activity>
-        <activity android:name=".Register"/>
-        <activity android:name=".Login"/>
-        <activity android:name=".Gallery"
-            android:label="@string/title_activity_gallery"
-            android:theme="@style/AppTheme"/>
+        <activity android:name=".Register" />
+        <activity android:name=".Login" />
+        <activity
+            android:name=".Contacts"
+            android:label="@string/title_activity_contacts"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

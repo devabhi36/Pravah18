@@ -53,7 +53,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
 
       AlertDialog.Builder builder = new AlertDialog.Builder(this);
       builder.setMessage("Already Registered?")
-              .setCancelable(false)
+              .setCancelable(true)
               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                   public void onClick(DialogInterface dialog, int id) {
                       Intent intent = new Intent(Register.this, Login.class);

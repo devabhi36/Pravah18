@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -36,6 +37,7 @@ import java.util.GregorianCalendar;
 
 public class Login extends AppCompatActivity {
     EditText reg_emial, reg_password;
+    Button login;
     int c;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         reg_emial = (EditText)findViewById(R.id.reg_emial);
         reg_password = (EditText)findViewById(R.id.reg_password);
+        login = (Button) findViewById(R.id.login);
     }
 
     public void login(View view){

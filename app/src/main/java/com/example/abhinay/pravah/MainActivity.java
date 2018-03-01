@@ -335,7 +335,8 @@ public class MainActivity extends AppCompatActivity
         startActivity(about);
     }
     public void contact(View v7){
-        Toast.makeText(getApplicationContext(), "CONTACTS PAGE", Toast.LENGTH_SHORT).show();
+        Intent conatct=new Intent(MainActivity.this, Contacts.class);
+        startActivity(conatct);
     }
     public void feedback(View feedback){
         Toast.makeText(this,"Give us feedback or comment", Toast.LENGTH_SHORT).show();
@@ -531,6 +532,8 @@ public class MainActivity extends AppCompatActivity
         dash.setVisible(true);
         MenuItem home = menuNav.findItem(R.id.home);
         home.setVisible(false);
+        MenuItem events = menuNav.findItem(R.id.events1);
+        events.setVisible(true);
     }
     public void hide_show4(){
         NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
