@@ -1,7 +1,9 @@
 package com.example.abhinay.pravah;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -34,6 +36,7 @@ import java.util.GregorianCalendar;
 
 public class Login extends AppCompatActivity {
     EditText reg_emial, reg_password;
+    int c;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,13 +47,8 @@ public class Login extends AppCompatActivity {
     }
 
     public void login(View view){
-        NavigationView navigationView= (NavigationView)view.findViewById(R.id.nav_view);
-        Menu menuNav=navigationView.getMenu();
-
-        MenuItem dash = menuNav.findItem(R.id.dashboard);
-        dash.setVisible(true);
-
-        Intent intent = new Intent(Login.this, MainActivity.class);
+        Intent intent = new Intent(Login.this, PRAVAH.class);
         startActivity(intent);
+        MainActivity.new_flag = 1;
     }
 }

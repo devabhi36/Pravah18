@@ -70,7 +70,7 @@ public class PRAVAH extends Fragment {
              public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                  switch (item.getItemId()){
-                case R.id.web: String web = "https://aktu.ac.in/pravah/contact.html";
+                case R.id.web: String web = "https://aktu.ac.in/pravah/";
                     WebView website = new WebView(getContext());
                     website.loadUrl(web);
                     return true;

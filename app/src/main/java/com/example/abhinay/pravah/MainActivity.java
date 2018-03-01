@@ -19,11 +19,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.webkit.WebView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static int flag=-1;
+    public static int new_flag = 0;
     ViewPager mViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,18 +173,22 @@ public class MainActivity extends AppCompatActivity
             events(null);
         } else if (id == R.id.schedule1) {
             schedule(null);
-        } else if (id == R.id.gallery1) {
-            gallery(null);
         } else if(id == R.id.map1){
             map(null);
-        } else if(id == R.id.dashboard){
-            Toast.makeText(getApplicationContext(), "OK SHOWN", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.register) {
             register(null);
+        } else if(id == R.id.dashboard){
+            dashboard(null);
+        } else if(id == R.id.changepass){
+            changepass(null);
+        } else if(id == R.id.profile){
+            dashboard(null);
+        } else if(id == R.id.team){
+            team_members(null);
+        } else if(id == R.id.accomadation){
+            accomadation(null);
         } else if(id == R.id.sign_in) {
             sign_in(null);
-        } else if (id == R.id.post1) {
-           post(null);
         } else if (id == R.id.feedback) {
             feedback(null);
         } else if (id == R.id.about1) {
@@ -209,27 +216,27 @@ public class MainActivity extends AppCompatActivity
         ft.replace(R.id.content_frame, new PRAVAH(), "fragment");
         ft.commit();
         flag=1;
-
-        NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
-        Menu menuNav=navigationView.getMenu();
-        MenuItem home = menuNav.findItem(R.id.home);
-        home.setVisible(false);
+        if(new_flag == 1){
+            hide_show2();
+        } else {
+            hide_show3();
+        }
     }
     public void theme(View v2){
         Intent theme=new Intent(MainActivity.this, Theme.class);
         startActivity(theme);
     }
     public void events(View v3){
-        NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
-        Menu menuNav=navigationView.getMenu();
-        MenuItem home = menuNav.findItem(R.id.home);
-        home.setVisible(true);
-
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
         ft.replace(R.id.content_frame, new Event(), "fragment");
         ft.commit();
         flag=0;
+        if(new_flag == 1){
+            hide_show5();
+        } else {
+            hide_show4();
+        }
     }
         public void cultural(View v31){
             NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
@@ -319,9 +326,6 @@ public class MainActivity extends AppCompatActivity
         Intent schedule=new Intent(MainActivity.this, Schedule.class);
         startActivity(schedule);
     }
-    public void gallery(View v4){
-        Toast.makeText(getApplicationContext(),"Go to open gallery", Toast.LENGTH_SHORT).show();
-    }
     public void map(View v5){
         Intent map=new Intent(MainActivity.this, Maps.class);
         startActivity(map);
@@ -331,10 +335,7 @@ public class MainActivity extends AppCompatActivity
         startActivity(about);
     }
     public void contact(View v7){
-        Toast.makeText(getApplicationContext(),"Contact Page", Toast.LENGTH_SHORT).show();
-    }
-    public void post(View v8){
-        Toast.makeText(getApplicationContext(),"Post your pic or vids", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "CONTACTS PAGE", Toast.LENGTH_SHORT).show();
     }
     public void feedback(View feedback){
         Toast.makeText(this,"Give us feedback or comment", Toast.LENGTH_SHORT).show();
@@ -352,8 +353,38 @@ public class MainActivity extends AppCompatActivity
     public void sponcer(View sponcer){
         Toast.makeText(getApplicationContext(),"Show Sponcers", Toast.LENGTH_SHORT).show();
     }
+    public void dashboard(View dashboard){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
+        ft.replace(R.id.content_frame, new Dashboard(), "fragment");
+        ft.commit();
+        flag = 0;
+        new_flag = 1;
 
+        hide_show1();
+    }
+    public void changepass(View changepass){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
+        ft.replace(R.id.content_frame, new ChangePass(), "fragment");
+        ft.commit();
 
+        hide_show1();
+    }
+    public void team_members(View team_members){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
+        ft.replace(R.id.content_frame, new TeamMembers(), "fragment");
+        ft.commit();
+
+        hide_show1();
+    }
+    public void accomadation(View accomadation){
+        String web = "https://aktu.ac.in/pravah/";
+        WebView website = new WebView(getApplicationContext());
+        website.loadUrl(web);
+        hide_show1();
+    }
     FragmentManager fragmentManager = getSupportFragmentManager();
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -362,5 +393,220 @@ public class MainActivity extends AppCompatActivity
         displaySelectedScreen(item.getItemId());
         return true;
     }
+
+    public void hide_show1(){
+        NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
+        Menu menuNav=navigationView.getMenu();
+
+        MenuItem home = menuNav.findItem(R.id.home);
+        home.setVisible(true);
+
+        MenuItem profile = menuNav.findItem(R.id.profile);
+        profile.setVisible(true);
+        profile.setChecked(true);
+
+        MenuItem changepass = menuNav.findItem(R.id.changepass);
+        changepass.setVisible(true);
+
+        MenuItem team = menuNav.findItem(R.id.team);
+        team.setVisible(true);
+
+        MenuItem accomadation = menuNav.findItem(R.id.accomadation);
+        accomadation.setVisible(true);
+
+        MenuItem events = menuNav.findItem(R.id.events1);
+        events.setVisible(false);
+
+        MenuItem theme = menuNav.findItem(R.id.theme1);
+        theme.setVisible(false);
+
+        MenuItem schedule = menuNav.findItem(R.id.schedule1);
+        schedule.setVisible(false);
+
+        MenuItem map = menuNav.findItem(R.id.map1);
+        map.setVisible(false);
+
+        MenuItem register = menuNav.findItem(R.id.register);
+        register.setVisible(false);
+
+        MenuItem sign_in = menuNav.findItem(R.id.sign_in);
+        sign_in.setVisible(false);
+
+        MenuItem dashboard = menuNav.findItem(R.id.dashboard);
+        dashboard.setVisible(false);
+
+        MenuItem sign_out = menuNav.findItem(R.id.sign_out);
+        sign_out.setVisible(false);
+
+        MenuItem feedback = menuNav.findItem(R.id.feedback);
+        feedback.setVisible(false);
+
+        MenuItem about = menuNav.findItem(R.id.about1);
+        about.setVisible(false);
+
+        MenuItem sponsors = menuNav.findItem(R.id.sponsor);
+        sponsors.setVisible(false);
+
+        MenuItem contact = menuNav.findItem(R.id.contact1);
+        contact.setVisible(false);
+
+        MenuItem join = menuNav.findItem(R.id.join);
+        join.setVisible(false);
+
+        MenuItem by_you = menuNav.findItem(R.id.by_you);
+        by_you.setVisible(false);
+
+        MenuItem about_us = menuNav.findItem(R.id.about_us);
+        about_us.setVisible(false);
+    }
+    public void hide_show2(){
+        NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
+        Menu menuNav=navigationView.getMenu();
+
+        MenuItem home = menuNav.findItem(R.id.home);
+        home.setVisible(false);
+
+        MenuItem profile = menuNav.findItem(R.id.profile);
+        profile.setVisible(false);
+        profile.setChecked(true);
+
+        MenuItem changepass = menuNav.findItem(R.id.changepass);
+        changepass.setVisible(false);
+
+        MenuItem team = menuNav.findItem(R.id.team);
+        team.setVisible(false);
+
+        MenuItem accomadation = menuNav.findItem(R.id.accomadation);
+        accomadation.setVisible(false);
+
+        MenuItem events = menuNav.findItem(R.id.events1);
+        events.setVisible(true);
+
+        MenuItem theme = menuNav.findItem(R.id.theme1);
+        theme.setVisible(true);
+
+        MenuItem schedule = menuNav.findItem(R.id.schedule1);
+        schedule.setVisible(true);
+
+        MenuItem map = menuNav.findItem(R.id.map1);
+        map.setVisible(true);
+
+        MenuItem register = menuNav.findItem(R.id.register);
+        register.setVisible(false);
+
+        MenuItem sign_in = menuNav.findItem(R.id.sign_in);
+        sign_in.setVisible(false);
+
+        MenuItem dashboard = menuNav.findItem(R.id.dashboard);
+        dashboard.setVisible(true);
+
+        MenuItem sign_out = menuNav.findItem(R.id.sign_out);
+        sign_out.setVisible(true);
+
+        MenuItem feedback = menuNav.findItem(R.id.feedback);
+        feedback.setVisible(true);
+
+        MenuItem about = menuNav.findItem(R.id.about1);
+        about.setVisible(true);
+
+        MenuItem sponsors = menuNav.findItem(R.id.sponsor);
+        sponsors.setVisible(true);
+
+        MenuItem contact = menuNav.findItem(R.id.contact1);
+        contact.setVisible(true);
+
+        MenuItem join = menuNav.findItem(R.id.join);
+        join.setVisible(true);
+
+        MenuItem by_you = menuNav.findItem(R.id.by_you);
+        by_you.setVisible(true);
+
+        MenuItem about_us = menuNav.findItem(R.id.about_us);
+        about_us.setVisible(true);
+    }
+    public void hide_show3(){
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu menuNav = navigationView.getMenu();
+        MenuItem dash = menuNav.findItem(R.id.dashboard);
+        dash.setVisible(true);
+        MenuItem home = menuNav.findItem(R.id.home);
+        home.setVisible(false);
+    }
+    public void hide_show4(){
+        NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
+        Menu menuNav=navigationView.getMenu();
+        MenuItem home = menuNav.findItem(R.id.home);
+        home.setVisible(true);
+        MenuItem dash = menuNav.findItem(R.id.dashboard);
+        dash.setVisible(true);
+        MenuItem events = menuNav.findItem(R.id.events1);
+        events.setVisible(false);
+    }
+    public void hide_show5(){
+        NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
+        Menu menuNav=navigationView.getMenu();
+
+        MenuItem home = menuNav.findItem(R.id.home);
+        home.setVisible(true);
+
+        MenuItem events = menuNav.findItem(R.id.events1);
+        events.setVisible(false);
+
+        MenuItem profile = menuNav.findItem(R.id.profile);
+        profile.setVisible(false);
+        profile.setChecked(true);
+
+        MenuItem changepass = menuNav.findItem(R.id.changepass);
+        changepass.setVisible(false);
+
+        MenuItem team = menuNav.findItem(R.id.team);
+        team.setVisible(false);
+
+        MenuItem accomadation = menuNav.findItem(R.id.accomadation);
+        accomadation.setVisible(false);
+
+        MenuItem theme = menuNav.findItem(R.id.theme1);
+        theme.setVisible(true);
+
+        MenuItem schedule = menuNav.findItem(R.id.schedule1);
+        schedule.setVisible(true);
+
+        MenuItem map = menuNav.findItem(R.id.map1);
+        map.setVisible(true);
+
+        MenuItem register = menuNav.findItem(R.id.register);
+        register.setVisible(false);
+
+        MenuItem sign_in = menuNav.findItem(R.id.sign_in);
+        sign_in.setVisible(false);
+
+        MenuItem dashboard = menuNav.findItem(R.id.dashboard);
+        dashboard.setVisible(true);
+
+        MenuItem sign_out = menuNav.findItem(R.id.sign_out);
+        sign_out.setVisible(true);
+
+        MenuItem feedback = menuNav.findItem(R.id.feedback);
+        feedback.setVisible(true);
+
+        MenuItem about = menuNav.findItem(R.id.about1);
+        about.setVisible(true);
+
+        MenuItem sponsors = menuNav.findItem(R.id.sponsor);
+        sponsors.setVisible(true);
+
+        MenuItem contact = menuNav.findItem(R.id.contact1);
+        contact.setVisible(true);
+
+        MenuItem join = menuNav.findItem(R.id.join);
+        join.setVisible(true);
+
+        MenuItem by_you = menuNav.findItem(R.id.by_you);
+        by_you.setVisible(true);
+
+        MenuItem about_us = menuNav.findItem(R.id.about_us);
+        about_us.setVisible(true);
+    }
+
 
 }

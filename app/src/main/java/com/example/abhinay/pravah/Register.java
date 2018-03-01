@@ -1,7 +1,9 @@
 package com.example.abhinay.pravah;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -48,7 +50,28 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_register);
+
+      AlertDialog.Builder builder = new AlertDialog.Builder(this);
+      builder.setMessage("Already Registered?")
+              .setCancelable(false)
+              .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                  public void onClick(DialogInterface dialog, int id) {
+                      Intent intent = new Intent(Register.this, Login.class);
+                      startActivity(intent);
+                  }
+              })
+              .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                  public void onClick(DialogInterface dialog, int id) {
+                      //  Action for 'NO' Button
+                      dialog.cancel();
+                  }
+              });
+      AlertDialog alert = builder.create();
+      //Setting the title manually
+      alert.setTitle(" ");
+      alert.show();
+
+      setContentView(R.layout.activity_register);
         
         genderS = (Spinner)findViewById(R.id.gender);
         youareS = (Spinner)findViewById(R.id.areyou);
