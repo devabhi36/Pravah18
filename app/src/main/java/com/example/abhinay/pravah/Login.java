@@ -50,8 +50,10 @@ public class Login extends AppCompatActivity {
     }
 
     public void login(View view){
-        Intent intent = new Intent(Login.this, PRAVAH.class);
-        startActivity(intent);
+        MainActivity.flag = 1;
         MainActivity.new_flag = 1;
+
+        Intent intent = new Intent(Login.this, MainActivity.class);
+        startActivity(intent);
     }
 }

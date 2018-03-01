@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    public static int flag=-1;
+    public static int flag = 1;
     public static int new_flag = 0;
     ViewPager mViewPager;
     @Override
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity
         displaySelectedScreen(R.id.main);
 
 
+        /*
         Menu menuNav=navigationView.getMenu();
 
         MenuItem register = menuNav.findItem(R.id.register);
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity
 
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(false);
+        */
 
        // BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
        // navigation.setOnNavigationItemSelectedListener(bottomNavigationView);
@@ -189,6 +191,8 @@ public class MainActivity extends AppCompatActivity
             accomadation(null);
         } else if(id == R.id.sign_in) {
             sign_in(null);
+        } else if(id == R.id.sign_out) {
+            sign_out(null);
         } else if (id == R.id.feedback) {
             feedback(null);
         } else if (id == R.id.about1) {
@@ -216,6 +220,7 @@ public class MainActivity extends AppCompatActivity
         ft.replace(R.id.content_frame, new PRAVAH(), "fragment");
         ft.commit();
         flag=1;
+
         if(new_flag == 1){
             hide_show2();
         } else {
@@ -232,6 +237,7 @@ public class MainActivity extends AppCompatActivity
         ft.replace(R.id.content_frame, new Event(), "fragment");
         ft.commit();
         flag=0;
+
         if(new_flag == 1){
             hide_show5();
         } else {
@@ -351,6 +357,16 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
         flag=1;
     }
+
+    public void sign_out(View sign_out){
+        // Changing flag value here will cause the app to close if user signs out on events page.
+        // flag = 1;
+        new_flag = 0;
+        onBackPressed();
+
+        hide_show3();
+        Toast.makeText(this, "You have been logged out.", Toast.LENGTH_SHORT).show();
+    }
     public void sponcer(View sponcer){
         Toast.makeText(getApplicationContext(),"Show Sponcers", Toast.LENGTH_SHORT).show();
     }
@@ -394,7 +410,7 @@ public class MainActivity extends AppCompatActivity
         displaySelectedScreen(item.getItemId());
         return true;
     }
-
+    // Login -> Dashboard
     public void hide_show1(){
         NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
         Menu menuNav=navigationView.getMenu();
@@ -460,6 +476,7 @@ public class MainActivity extends AppCompatActivity
         MenuItem about_us = menuNav.findItem(R.id.about_us);
         about_us.setVisible(false);
     }
+    // Login/Dashboard -> Home
     public void hide_show2(){
         NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
         Menu menuNav=navigationView.getMenu();
@@ -525,26 +542,41 @@ public class MainActivity extends AppCompatActivity
         MenuItem about_us = menuNav.findItem(R.id.about_us);
         about_us.setVisible(true);
     }
+    // Not login -> Home
     public void hide_show3(){
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         Menu menuNav = navigationView.getMenu();
         MenuItem dash = menuNav.findItem(R.id.dashboard);
-        dash.setVisible(true);
+        dash.setVisible(false);
+        MenuItem sign_out = menuNav.findItem(R.id.sign_out);
+        sign_out.setVisible(false);
+        MenuItem register = menuNav.findItem(R.id.register);
+        register.setVisible(true);
+        MenuItem sign_in = menuNav.findItem(R.id.sign_in);
+        sign_in.setVisible(true);
         MenuItem home = menuNav.findItem(R.id.home);
         home.setVisible(false);
         MenuItem events = menuNav.findItem(R.id.events1);
         events.setVisible(true);
     }
+    // not login -> events
     public void hide_show4(){
         NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
         Menu menuNav=navigationView.getMenu();
         MenuItem home = menuNav.findItem(R.id.home);
         home.setVisible(true);
         MenuItem dash = menuNav.findItem(R.id.dashboard);
-        dash.setVisible(true);
+        dash.setVisible(false);
+        MenuItem sign_out = menuNav.findItem(R.id.sign_out);
+        sign_out.setVisible(false);
+        MenuItem register = menuNav.findItem(R.id.register);
+        register.setVisible(true);
+        MenuItem sign_in = menuNav.findItem(R.id.sign_in);
+        sign_in.setVisible(true);
         MenuItem events = menuNav.findItem(R.id.events1);
         events.setVisible(false);
     }
+    // Login ke baad -> events
     public void hide_show5(){
         NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
         Menu menuNav=navigationView.getMenu();
