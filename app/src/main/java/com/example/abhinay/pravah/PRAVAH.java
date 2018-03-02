@@ -2,6 +2,7 @@ package com.example.abhinay.pravah;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -11,11 +12,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -60,9 +65,11 @@ public class PRAVAH extends Fragment {
         return v1;
     }
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("प्रवाह'18");
+
+
 
          BottomNavigationView navigation = (BottomNavigationView)view.findViewById(R.id.navigation);
          navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -70,26 +77,29 @@ public class PRAVAH extends Fragment {
              public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                  switch (item.getItemId()){
-                case R.id.web: String web = "https://aktu.ac.in/pravah/";
-                    WebView website = new WebView(getContext());
-                    website.loadUrl(web);
+                case R.id.web:
+                    Web_view.num = 1;
+                    Intent i1 = new Intent(getActivity(), Web_view.class);
+                    startActivity(i1);
+//                    String web = "https://aktu.ac.in/pravah/";
+//                    WebView website = new WebView(getContext());
+//                    website.loadUrl(web);
                     return true;
-                case R.id.facebook: String fb = "https://www.facebook.com/aktu.pravah/";
-                    WebView facebook = new WebView(getContext());
-                    facebook.loadUrl(fb);
+                case R.id.facebook: Web_view.num = 2;
+                    Intent i2 = new Intent(getActivity(), Web_view.class);
+                    startActivity(i2);
                     return true;
-                case R.id.youtube: String yt = "https://www.youtube.com/channel/UCRb5zwmzj8VFdi5FRhZyTyg";
-                    WebView youtube = new WebView(getContext());
-                    youtube.loadUrl(yt);
+                case R.id.youtube: Web_view.num = 3;
+                    Intent i3 = new Intent(getActivity(), Web_view.class);
+                    startActivity(i3);
                     return true;
-                case R.id.insta: String insta = "https://www.instagram.com/pravah.aktu/";
-                    WebView instagram = new WebView(getContext());
-                    instagram.loadUrl(insta);
+                case R.id.insta: Web_view.num = 4;
+                    Intent i4 = new Intent(getActivity(), Web_view.class);
+                    startActivity(i4);
                     return true;
             }
                  return false;
              }
          });
     }
-
 }

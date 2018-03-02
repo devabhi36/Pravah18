@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -52,7 +53,7 @@ public class Login extends AppCompatActivity {
     public void login(View view){
         MainActivity.flag = 1;
         MainActivity.new_flag = 1;
-
+        //MainActivity.flag_new = 1;
         Intent intent = new Intent(Login.this, MainActivity.class);
         startActivity(intent);
     }
