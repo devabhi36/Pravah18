@@ -8,7 +8,7 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="#ffffff"
         app:menu="@menu/navigation" />
@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:layout_above="@id/navigation"
+        android:paddingBottom="5dp"
         android:background="#000000">
 
         <HorizontalScrollView
@@ -40,14 +41,29 @@
                         android:layout_height="243dp"
                         android:layout_gravity="center"
                         android:onClick="theme"
-                        android:src="@drawable/theme" />
+                        android:src="@drawable/theme"/>
 
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c_1"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/c1"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <ImageButton
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/line"
+                        android:onClick="events"
+                        android:layout_gravity="center"/>
                 </android.support.v7.widget.CardView>
                 <android.support.v7.widget.CardView
                     android:id="@+id/c2"
                     android:layout_width="176dp"
                     android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/c1"
+                    android:layout_toRightOf="@id/c_1"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp">
 
@@ -61,11 +77,28 @@
 
 
                 </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c_2"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/c2"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <ImageButton
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/line"
+                        android:onClick="events"
+                        android:layout_gravity="center"/>
+                </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/c3"
                     android:layout_width="176dp"
                     android:layout_height="match_parent"
-                    android:layout_toRightOf="@+id/c2">
+                    android:layout_toRightOf="@+id/c_2">
 
                     <ImageButton
                         android:id="@+id/schedule"
@@ -76,11 +109,28 @@
                         android:layout_gravity="center"/>
 
                 </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c_3"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/c3"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <ImageButton
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/line"
+                        android:onClick="events"
+                        android:layout_gravity="center"/>
+                </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/c5"
                     android:layout_width="176dp"
                     android:layout_height="match_parent"
-                    android:layout_toRightOf="@+id/c3">
+                    android:layout_toRightOf="@+id/c_3">
 
                     <ImageButton
                         android:id="@+id/map"
@@ -91,11 +141,28 @@
                         android:layout_gravity="center"/>
 
                 </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c_5"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/c5"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <ImageButton
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/line"
+                        android:onClick="events"
+                        android:layout_gravity="center"/>
+                </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/c6"
                     android:layout_width="176dp"
                     android:layout_height="match_parent"
-                    android:layout_toRightOf="@+id/c5">
+                    android:layout_toRightOf="@+id/c_5">
 
                     <ImageButton
                         android:id="@+id/about"
@@ -106,11 +173,28 @@
                         android:layout_gravity="center"/>
 
                 </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c_6"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/c6"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <ImageButton
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/line"
+                        android:onClick="events"
+                        android:layout_gravity="center"/>
+                </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                 android:id="@+id/c7"
                 android:layout_width="176dp"
                 android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/c6">
+                android:layout_toRightOf="@+id/c_6">
 
                 <ImageButton
                     android:id="@+id/contact"
@@ -121,11 +205,28 @@
                     android:layout_gravity="center"/>
 
             </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/c_7"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/c7"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <ImageButton
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/line"
+                        android:onClick="events"
+                        android:layout_gravity="center"/>
+                </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/c8"
                     android:layout_width="176dp"
                     android:layout_height="match_parent"
-                    android:layout_toRightOf="@+id/c7">
+                    android:layout_toRightOf="@+id/c_7">
 
                     <ImageButton
                         android:id="@+id/post"
