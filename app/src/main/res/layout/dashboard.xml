@@ -159,7 +159,23 @@
                     android:layout_marginTop="30dp"
                     android:layout_gravity="center"/>
                 <TextView
-                    android:id="@+id/devents"
+                    android:id="@+id/devents1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="EVENTS"
+                    android:textSize="20dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:id="@+id/devents2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="EVENTS"
+                    android:textSize="20dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:id="@+id/devents3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="EVENTS"
