@@ -24,10 +24,10 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="0dp"
-                android:onClick="cordi">
+                android:layout_marginTop="0dp">
 
                 <ImageButton
+                    android:id="@+id/cordiIB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/cordi"
@@ -42,7 +42,7 @@
                     android:layout_marginTop="50dp"
                     android:fontFamily="cursive"
                     android:text="Dr. J.B. Srivastava"
-                    android:textColor="#000000"
+                    android:textColor="@color/aasmaani"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 
@@ -88,17 +88,17 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="340dp">
+                android:layout_marginTop="340dp"
+                android:id="@+id/deputy">
 
                 <ImageButton
-                    android:id="@+id/deputy"
+                    android:id="@+id/deputyIB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/deputy"
                     android:layout_gravity="center"
                     android:background="#ffffff"
-                    android:layout_marginTop="-50dp"
-                    android:onClick="deputy"/>
+                    android:layout_marginTop="-50dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
                     android:layout_marginTop="50dp"
                     android:fontFamily="cursive"
                     android:text="Dr. Pragati Shukla"
-                    android:textColor="#000000"
+                    android:textColor="@color/aasmaani"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 

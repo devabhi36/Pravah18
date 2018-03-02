@@ -23,17 +23,17 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="0dp">
+                android:layout_marginTop="0dp"
+                android:id="@+id/chief_patron">
 
                 <ImageButton
-                    android:id="@+id/chief_patron"
+                    android:id="@+id/chief_patronIB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/chief_patron"
                     android:layout_gravity="center"
                     android:background="#ffffff"
-                    android:layout_marginTop="-50dp"
-                    android:onClick="chief_patron"/>
+                    android:layout_marginTop="-50dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
                     android:layout_marginTop="50dp"
                     android:fontFamily="cursive"
                     android:text="Dr. Vinay Kumar Pathak"
-                    android:textColor="#000000"
+                    android:textColor="@color/aasmaani"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 

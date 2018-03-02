@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.abhinay.pravah.Email">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/email_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:background="#FF0000"
+        android:titleTextColor="#000000"
+        android:title="Compose"
+        app:titleMarginStart="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="75dp"
+        android:fontFamily="sans-serif-condensed"
+        android:paddingLeft="15dp"
+        android:text="From:"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="60dp"
+        android:fontFamily="casual"
+        android:textSize="20dp"
+        android:hint="Email Id"></EditText>
+
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="120dp"
+        android:fontFamily="serif-monospace"
+        android:hint="Subject"
+        android:paddingLeft="15dp"
+        android:textSize="20dp"></EditText>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="180dp"
+        android:id="@+id/scrollView2">
+
+        <EditText
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="0dp"
+            android:fontFamily="serif-monospace"
+            android:gravity="top"
+            android:hint="Compose Email"
+            android:paddingLeft="15dp"
+            android:textSize="20dp"></EditText>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/sendEmail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text=""
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/scrollView2"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/send"/>
+
+</RelativeLayout>

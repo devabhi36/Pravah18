@@ -23,17 +23,17 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="0dp">
+                android:layout_marginTop="0dp"
+                android:id="@+id/st_cordi1">
 
                 <ImageButton
-                    android:id="@+id/st_cordi1"
+                    android:id="@+id/st_cordiIB1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/st_cordi1"
                     android:layout_gravity="center"
                     android:background="#ffffff"
-                    android:layout_marginTop="-50dp"
-                    android:onClick="st_cordi1"/>
+                    android:layout_marginTop="-50dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
                     android:layout_marginTop="50dp"
                     android:fontFamily="cursive"
                     android:text="Ashwani Sharma"
-                    android:textColor="#000000"
+                    android:textColor="@color/aasmaani"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 
@@ -76,17 +76,17 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="340dp">
+                android:layout_marginTop="340dp"
+                android:id="@+id/st_cordi2">
 
                 <ImageButton
-                    android:id="@+id/st_cordi2"
+                    android:id="@+id/st_cordiIB2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/st_cordi2"
                     android:layout_gravity="center"
                     android:background="#ffffff"
-                    android:layout_marginTop="-50dp"
-                    android:onClick="st_cordi2"/>
+                    android:layout_marginTop="-50dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                     android:layout_marginTop="50dp"
                     android:fontFamily="cursive"
                     android:text="Anushka Awasthi"
-                    android:textColor="#000000"
+                    android:textColor="@color/aasmaani"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 

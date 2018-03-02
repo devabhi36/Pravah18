@@ -132,8 +132,8 @@
                         android:layout_width="159dp"
                         android:layout_height="243dp"
                         android:src="@drawable/feedback"
-                        android:onClick="post"
-                        android:layout_gravity="center"/>
+                        android:onClick="feedback"
+                        android:layout_gravity="center" />
 
                 </android.support.v7.widget.CardView>
 

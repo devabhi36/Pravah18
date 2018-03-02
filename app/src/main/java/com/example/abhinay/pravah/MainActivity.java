@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         home(null);
+        Toast.makeText(getApplicationContext(), Integer.toString(new_flag), Toast.LENGTH_SHORT).show();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -348,7 +349,8 @@ public class MainActivity extends AppCompatActivity
         startActivity(conatct);
     }
     public void feedback(View feedback){
-        Toast.makeText(this,"Give us feedback or comment", Toast.LENGTH_SHORT).show();
+       Intent email = new Intent(MainActivity.this, Email.class);
+        startActivity(email);
     }
     public void register(View register){
         Intent intent = new Intent(MainActivity.this, Register.class);

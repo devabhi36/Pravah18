@@ -135,7 +135,9 @@
         <activity
             android:name=".Contacts"
             android:label="@string/title_activity_contacts"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Email" />
+        <activity android:name=".Web_view"></activity>
     </application>
 
 </manifest>
