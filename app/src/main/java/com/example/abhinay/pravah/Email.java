@@ -60,7 +60,7 @@ public class Email extends AppCompatActivity {
         alert.setTitle("Thanks for your feedback..!");
         alert.show();
     }
-    protected void sendEmail(){
+    protected void sendEmail() {
         gsubject = String.valueOf(subject.getText());
         gcontent = String.valueOf(content.getText());
         Log.i("Send email", "");
@@ -82,7 +82,6 @@ public class Email extends AppCompatActivity {
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(getApplicationContext(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }
-
     }
 
 }
