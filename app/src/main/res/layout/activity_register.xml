@@ -125,6 +125,63 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="QUALIFIED EVENT 1:"
+                android:textSize="20dp"
+                android:layout_marginTop="636dp"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="668dp"
+                android:textSize="20dp"
+                android:id="@+id/event1"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="QUALIFIED EVENT 2:"
+                android:textSize="20dp"
+                android:layout_marginTop="730dp"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="764dp"
+                android:textSize="20dp"
+                android:id="@+id/event2"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="QUALIFIED EVENT 3"
+                android:textSize="20dp"
+                android:layout_marginTop="826dp"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="858dp"
+                android:textSize="20dp"
+                android:id="@+id/event3"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
           
             <EditText
                 android:layout_width="match_parent"
@@ -132,7 +189,7 @@
                 android:id="@+id/fathername"
                 android:hint="FATHER'S NAME"
                 android:textSize="20dp"
-                android:layout_marginTop="637dp"
+                android:layout_marginTop="920dp"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -143,7 +200,7 @@
                 android:id="@+id/mothername"
                 android:hint="MOTHER'S NAME"
                 android:textSize="20dp"
-                android:layout_marginTop="700dp"
+                android:layout_marginTop="982dp"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -154,7 +211,7 @@
                 android:id="@+id/aadhaar"
                 android:hint="AADHAAR NO."
                 android:textSize="20dp"
-                android:layout_marginTop="763dp"
+                android:layout_marginTop="1044dp"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -164,14 +221,14 @@
                 android:layout_height="wrap_content"
                 android:text="YOUR ZONE:"
                 android:textSize="20dp"
-                android:layout_marginTop="826dp"
+                android:layout_marginTop="1106dp"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
             
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="858dp"
+                android:layout_marginTop="1138dp"
                 android:textSize="20dp"
                 android:id="@+id/zone"
                 android:textColorHint="#ffffff"
@@ -184,7 +241,7 @@
                 android:id="@+id/college"
                 android:hint="COLLEGE NAME"
                 android:textSize="20dp"
-                android:layout_marginTop="921dp"
+                android:layout_marginTop="1200dp"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -195,7 +252,7 @@
                 android:id="@+id/rollno"
                 android:hint="ROLL NO"
                 android:textSize="20dp"
-                android:layout_marginTop="984dp"
+                android:layout_marginTop="1262dp"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
@@ -214,7 +271,7 @@
                 android:background="@drawable/registerback4"
                 android:layout_alignTop="@+id/lastname"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="920dp" />
+                android:layout_marginTop="1198dp" />
 
         </RelativeLayout>
     </ScrollView>

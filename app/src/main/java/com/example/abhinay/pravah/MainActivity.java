@@ -366,6 +366,22 @@ public class MainActivity extends AppCompatActivity
     public void sign_out(View sign_out){
         // Changing flag value here will cause the app to close if user signs out on events page.
         // flag = 1;
+        MainActivity._name = "";
+        MainActivity._dob = "";
+        MainActivity._gender = "";
+        MainActivity._email = "";
+        MainActivity._mobile = "";
+        MainActivity._fathername = "";
+        MainActivity._mothername = "";
+        MainActivity._aadhaar = "";
+        MainActivity._zone = "";
+        MainActivity._college = "";
+        MainActivity._rollno = "";
+        MainActivity._events1 = "";
+        MainActivity._events2 = "";
+        MainActivity._events3 = "";
+        MainActivity._youare = "";
+
         new_flag = 0;
         onBackPressed();
 
