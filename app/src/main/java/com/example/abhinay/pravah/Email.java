@@ -2,6 +2,7 @@ package com.example.abhinay.pravah;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +28,8 @@ public class Email extends AppCompatActivity {
         subject = (EditText) findViewById(R.id.subject);
         content = (EditText) findViewById(R.id.content);
         email_toolbar = (Toolbar) findViewById(R.id.email_toolbar);
-        email_toolbar.setTitle("COMPOSE");
+        email_toolbar.setTitle("Compose");
+        email_toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
 
         Button startBtn = (Button) findViewById(R.id.sendEmail);
         startBtn.setOnClickListener(new View.OnClickListener() {

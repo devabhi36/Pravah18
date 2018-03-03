@@ -13,9 +13,9 @@
         app:layout_collapseMode="pin"
         app:popupTheme="@style/AppTheme.PopupOverlay"
         android:background="#FF0000"
-        android:titleTextColor="#000000"
+        android:titleTextColor="#ffffff"
         android:title="Compose"
-        app:titleMarginStart="10dp" />
+        app:titleMarginStart="80dp" />
 
     <TextView
         android:layout_width="wrap_content"
