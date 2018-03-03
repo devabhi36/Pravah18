@@ -2,6 +2,7 @@ package com.example.abhinay.pravah;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -19,6 +20,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class Maps extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    //Click on the red marker to get directions.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +28,38 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.map);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
         builder.setMessage("Click on the red marker to get directions.")
-                .setCancelable(true)
-                .setNeutralButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog alertDialog = builder.create();
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+                .setNegativeButton(" ", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        dialog.cancel();
+                    }
+                });
+        android.app.AlertDialog alert = builder.create();
         //Setting the title manually
-        alertDialog.setTitle(" ");
-        alertDialog.show();
+        alert.setTitle(" ");
+        alert.show();
+
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setMessage("Click on the red marker to get directions.")
+//                .setCancelable(true)
+//                .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                dialog.cancel();
+//            }
+//        });
+//        AlertDialog alertDialog = builder.create();
+//        //Setting the title manually
+//        alertDialog.setTitle(" ");
+//        alertDialog.show();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
