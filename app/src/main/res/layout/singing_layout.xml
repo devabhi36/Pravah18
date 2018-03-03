@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.abhinay.pravah.Singing">
 
-    <include layout="@layout/rangoli_content" />
+    <include layout="@layout/singing_content" />
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
