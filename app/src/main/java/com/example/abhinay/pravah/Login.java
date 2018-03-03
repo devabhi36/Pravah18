@@ -154,7 +154,7 @@ public class Login extends AppCompatActivity {
                 MainActivity._events3 = returnEvent( e[2] );
                 MainActivity._youare = a[13];
 
-                Toast.makeText(getApplicationContext(), "Logged in, view your details from the Dashboard.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Signed In, view your details from the Dashboard.", Toast.LENGTH_SHORT).show();
 
                 MainActivity.flag = 1;
                 MainActivity.new_flag = 1;
