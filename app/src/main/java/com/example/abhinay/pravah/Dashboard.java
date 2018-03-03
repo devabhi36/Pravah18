@@ -54,15 +54,25 @@ public class Dashboard extends Fragment {
         gender.setText(MainActivity._gender);
         email.setText(MainActivity._email);
         mobile.setText(MainActivity._mobile);
-        fathername.setText(MainActivity._fathername);
-        mothername.setText(MainActivity._mothername);
+
         aadhaar.setText(MainActivity._aadhaar);
         zone.setText(MainActivity._zone);
         college.setText(MainActivity._college);
-        rollno.setText(MainActivity._rollno);
         events1.setText(MainActivity._events1);
         events2.setText(MainActivity._events2);
         events3.setText(MainActivity._events3);
         youare.setText(MainActivity._youare);
+
+        if ( MainActivity._fathername.equals("-") ) {
+
+            fathername.setText("");
+            mothername.setText("");
+            rollno.setText("");
+        }
+        else {
+            fathername.setText(MainActivity._fathername);
+            mothername.setText(MainActivity._mothername);
+            rollno.setText(MainActivity._rollno);
+        }
     }
 }
