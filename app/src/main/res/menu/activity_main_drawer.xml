@@ -66,6 +66,11 @@
                 android:icon="@drawable/ic_assignment_ind_black_48dp"
                 android:title="Sign Out"
                 android:visible="true"/>
+            <item
+                android:id="@+id/yourteam"
+                android:icon="@drawable/ic_register_48dp"
+                android:title="Your Team"
+                android:visible="true"/>
         </menu>
     </item>
 

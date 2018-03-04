@@ -197,6 +197,8 @@ public class MainActivity extends AppCompatActivity
             sign_in(null);
         } else if(id == R.id.sign_out) {
             sign_out(null);
+        } else if (id == R.id.yourteam) {
+            yourteam(null);
         } else if (id == R.id.feedback) {
             feedback(null);
         } else if (id == R.id.about1) {
@@ -388,6 +390,15 @@ public class MainActivity extends AppCompatActivity
         hide_show3();
         Toast.makeText(this, "You have been logged out.", Toast.LENGTH_SHORT).show();
     }
+
+    public void yourteam (View view) {
+
+        Intent intent = new Intent(MainActivity.this, Team.class);
+        startActivity(intent);
+
+        flag = 1;
+    }
+
     public void sponcer(View sponcer){
         Toast.makeText(getApplicationContext(),"Show Sponcers", Toast.LENGTH_SHORT).show();
     }
@@ -476,6 +487,9 @@ public class MainActivity extends AppCompatActivity
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(false);
 
+        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
+        yourteam.setVisible(false);
+
         MenuItem feedback = menuNav.findItem(R.id.feedback);
         feedback.setVisible(false);
 
@@ -542,6 +556,9 @@ public class MainActivity extends AppCompatActivity
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(true);
 
+        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
+        yourteam.setVisible(true);
+
         MenuItem feedback = menuNav.findItem(R.id.feedback);
         feedback.setVisible(true);
 
@@ -571,6 +588,8 @@ public class MainActivity extends AppCompatActivity
         dash.setVisible(false);
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(false);
+        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
+        yourteam.setVisible(false);
         MenuItem register = menuNav.findItem(R.id.register);
         register.setVisible(true);
         MenuItem sign_in = menuNav.findItem(R.id.sign_in);
@@ -590,6 +609,8 @@ public class MainActivity extends AppCompatActivity
         dash.setVisible(false);
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(false);
+        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
+        yourteam.setVisible(false);
         MenuItem register = menuNav.findItem(R.id.register);
         register.setVisible(true);
         MenuItem sign_in = menuNav.findItem(R.id.sign_in);
@@ -641,6 +662,9 @@ public class MainActivity extends AppCompatActivity
 
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(true);
+
+        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
+        yourteam.setVisible(true);
 
         MenuItem feedback = menuNav.findItem(R.id.feedback);
         feedback.setVisible(true);

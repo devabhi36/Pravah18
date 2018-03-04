@@ -97,7 +97,7 @@ public class Login extends AppCompatActivity {
 
             try{
 
-                String link = "http://192.168.1.37/login.php";
+                String link = "http://192.168.43.239/login.php";
                 String data_  = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8") + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
                 URL url = new URL(link);
                 URLConnection conn = url.openConnection();
