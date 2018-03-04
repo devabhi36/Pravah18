@@ -47,33 +47,33 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     String[] youare = { " PARTICIPANT", " ACCOMPANYING FACULTY"," OTHERS",};
     String[] zone = { " AGRA", " ALLAHABAD", " BAREILLY", " GAUTAM BUDH NAGAR", " GHAZIABAD", " GORAKHPUR", " LUCKNOW", " MEERUT",};
 
-  @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-      AlertDialog.Builder builder = new AlertDialog.Builder(this);
-      builder.setMessage("Already Registered?")
-              .setCancelable(true)
-              .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                  public void onClick(DialogInterface dialog, int id) {
-                      Intent intent = new Intent(Register.this, Login.class);
-                      startActivity(intent);
-                  }
-              })
-              .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                  public void onClick(DialogInterface dialog, int id) {
-                      //  Action for 'NO' Button
-                      dialog.cancel();
-                  }
-              });
-      AlertDialog alert = builder.create();
-      //Setting the title manually
-      alert.setTitle(" ");
-      alert.show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Already Registered?")
+                .setCancelable(true)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(Register.this, Login.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle(" ");
+        alert.show();
 
-      setContentView(R.layout.activity_register);
-        
+        setContentView(R.layout.activity_register);
+
         genderS = (Spinner)findViewById(R.id.gender);
         youareS = (Spinner)findViewById(R.id.areyou);
         zoneS = (Spinner)findViewById(R.id.zone);
@@ -306,7 +306,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         protected void onPostExecute(String result) {
             if ( result.equals("Registration successful.") )
             {
-                Toast.makeText(getApplicationContext(), result + " You may now log in using your details.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), result + " You may now sign in using your details.", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Register.this, Login.class);
                 startActivity(intent);
@@ -324,7 +324,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     }
 
     public void dob(View view){
-    DatePickerFragment fragment = new DatePickerFragment();
+        DatePickerFragment fragment = new DatePickerFragment();
         fragment.show(getSupportFragmentManager(), "date");
     }
 

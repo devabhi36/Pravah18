@@ -3,6 +3,8 @@ package com.example.abhinay.pravah;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -132,8 +134,9 @@ public class MainActivity extends AppCompatActivity
             flag = 0;
             events(null);
         } else if(flag==1) {
-            finish();
-            System.exit(0);
+            exit();
+//            finish();
+//            System.exit(0);
         } else {
             Toast.makeText(getApplicationContext(),Integer.toString(flag)+" Flag value not set for this.",Toast.LENGTH_SHORT).show();
         }
@@ -362,7 +365,6 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
         flag=1;
     }
-
     public void sign_out(View sign_out){
         // Changing flag value here will cause the app to close if user signs out on events page.
         // flag = 1;
@@ -386,10 +388,10 @@ public class MainActivity extends AppCompatActivity
         onBackPressed();
 
         hide_show3();
-        Toast.makeText(this, "You have been logged out.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "You have been signed out.", Toast.LENGTH_SHORT).show();
     }
     public void sponcer(View sponcer){
-        Toast.makeText(getApplicationContext(),"Show Sponcers", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Will be announced shortly :)", Toast.LENGTH_SHORT).show();
     }
     public void dashboard(View dashboard){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -664,5 +666,51 @@ public class MainActivity extends AppCompatActivity
         about_us.setVisible(true);
     }
 
+    public void exit(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(" ")
+                .setCancelable(false)
+                .setPositiveButton("NO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+                .setNegativeButton("YES", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        if(new_flag == 1){
+                            alert();
+                        }
+                        else {
+                            finish();
+                            System.exit(0);
+                        }
+                    }
+                });
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle("Want to exit..?");
+        alert.show();
+    }
+    public void alert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(" ")
+                .setCancelable(false)
+                .setPositiveButton("NO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                        System.exit(0);
+                    }
+                });
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle("You will be signed out.");
+        alert.show();
+    }
+    }
 
-}

@@ -15,6 +15,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,11 @@ public class PRAVAH extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v1= inflater.inflate(R.layout.pravah, container, false);
+
+//        BottomNavigationView navigation = (BottomNavigationView)v1.findViewById(R.id.navigation);
+//        Menu menuBottomNav=navigation.getMenu();
+//        MenuItem home = menuBottomNav.findItem(R.id.bottomhome);
+//        home.setChecked(true);
 
         mViewPager = (ViewPager) v1.findViewById(R.id.viewPage);
         final SlideShow adapterView = new SlideShow(getContext());
@@ -71,7 +77,7 @@ public class PRAVAH extends Fragment {
 
 
 
-         BottomNavigationView navigation = (BottomNavigationView)view.findViewById(R.id.navigation);
+        BottomNavigationView navigation = (BottomNavigationView)view.findViewById(R.id.navigation);
          navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
              @Override
              public boolean onNavigationItemSelected(@NonNull MenuItem item) {
