@@ -97,7 +97,7 @@ public class Login extends AppCompatActivity {
 
             try{
 
-                String link = "http://192.168.43.239/login.php";
+                String link = MainActivity.host + "login.php";
                 String data_  = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8") + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
                 URL url = new URL(link);
                 URLConnection conn = url.openConnection();
@@ -118,7 +118,8 @@ public class Login extends AppCompatActivity {
                     sb.append(line);
                     break;
                 }
-
+                
+                String sb = reader.readLine();
                 return sb.toString();
             }
             catch(Exception e) {
@@ -165,7 +166,7 @@ public class Login extends AppCompatActivity {
             }
             else
             {
-                Toast.makeText(getApplicationContext(), "Database error.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
             }
         }
 

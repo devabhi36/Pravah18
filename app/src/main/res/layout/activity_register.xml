@@ -269,7 +269,7 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:background="@drawable/registerback4"
-                android:layout_alignTop="@+id/lastname"
+                android:layout_alignTop="@+id/register"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="1198dp" />
 

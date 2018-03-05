@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.example.abhinay.pravah.YourTeam">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/t1"
@@ -40,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="126dp"
+            android:layout_marginTop="116dp"
             android:textSize="20dp" />
 
         <TextView
@@ -48,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="158dp"
+            android:layout_marginTop="148dp"
             android:textSize="20dp" />
 
         <TextView
@@ -56,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="180dp"
             android:textSize="20dp" />
 
         <TextView
@@ -64,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="222dp"
+            android:layout_marginTop="212dp"
             android:textSize="20dp" />
 
         <TextView
@@ -72,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="254dp"
+            android:layout_marginTop="244dp"
             android:textSize="20dp" />
 
         <TextView
@@ -80,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="286dp"
+            android:layout_marginTop="276dp"
             android:textSize="20dp" />
 
         <TextView
@@ -88,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="318dp"
+            android:layout_marginTop="308dp"
             android:textSize="20dp" />
 
         <TextView
@@ -96,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="340dp"
             android:textSize="20dp" />
 
         <TextView
@@ -104,8 +100,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="382dp"
+            android:layout_marginTop="372dp"
             android:textSize="20dp" />
 
-    </ScrollView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="436dp"
+            android:text="To add team members, enter their emails STRICTLY in the following format:"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/members"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="email1@example.com;email2@example.com;"
+            android:textSize="20dp"
+            android:layout_marginTop="478dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Add Members"
+            android:onClick="addMembers"
+            android:id="@+id/addMembers"
+            android:textAlignment="center"
+            android:layout_marginTop="560dp"/>
+
 </RelativeLayout>
