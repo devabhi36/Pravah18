@@ -73,7 +73,7 @@ public class PRAVAH extends Fragment {
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle("प्रवाह'18");
+        getActivity().setTitle("प्रवाह");
 
 
 

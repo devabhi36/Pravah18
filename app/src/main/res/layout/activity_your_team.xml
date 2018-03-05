@@ -6,110 +6,177 @@
     android:layout_height="match_parent"
     tools:context="com.example.abhinay.pravah.YourTeam">
 
-
         <TextView
-            android:id="@+id/t1"
+            android:id="@+id/head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:textSize="20dp" />
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="casual"
+            android:text="Your team members are:"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
 
-        <TextView
-            android:id="@+id/t2"
+        <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="52dp"
-            android:textSize="20dp" />
+            android:layout_height="250dp"
+            android:layout_below="@+id/head"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/scrollView3">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/t3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="84dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/t4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="116dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="35dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/t5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="148dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="70dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/t6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="180dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="105dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/t7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="212dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="140dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/t8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="244dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="175dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/t9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="276dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="210dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/t10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="308dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="245dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/t11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="340dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="280dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/t12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="372dp"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="315dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="436dp"
-            android:text="To add team members, enter their emails STRICTLY in the following format:"
-            android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/t11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="350dp"
+                        android:hint="Member 1"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/t12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="385dp"
+                        android:fontFamily="cursive"
+                        android:textColor="#A52A2A"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+        </ScrollView>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scrollView3"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="10dp"
+        android:text="To add team members, enter their emails STRICTLY in the following format:"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold|italic" />
 
         <EditText
             android:id="@+id/members"
@@ -117,16 +184,25 @@
             android:layout_height="wrap_content"
             android:hint="email1@example.com;email2@example.com;"
             android:textSize="20dp"
-            android:layout_marginTop="478dp" />
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textView4"
+            android:padding="10dp"
+            />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Add Members"
-            android:onClick="addMembers"
-            android:id="@+id/addMembers"
-            android:textAlignment="center"
-            android:layout_marginTop="560dp"/>
+    <Button
+        android:id="@+id/addMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/members"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:fontFamily="serif-monospace"
+        android:onClick="addMembers"
+        android:text="Add Members"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:background="#ffffff"/>
 
 </RelativeLayout>
