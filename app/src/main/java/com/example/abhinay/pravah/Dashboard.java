@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 public class Dashboard extends Fragment {
 
-    TextView name, dob, gender, email, mobile, fathername, mothername, aadhaar, zone, college, rollno, events1, events2, events3, youare;
+    TextView name, dob, gender, email, mobile, fathername, mothername, aadhaar, zone, college, rollno, events1, events2, events3, youare, tshirt;
 
     @Nullable
     @Override
@@ -40,6 +40,7 @@ public class Dashboard extends Fragment {
         events2 = (TextView)v.findViewById(R.id.devents2);
         events3 = (TextView)v.findViewById(R.id.devents3);
         youare = (TextView)v.findViewById(R.id.dyouare);
+        tshirt = (TextView)v.findViewById(R.id.dtshirt);
 
         return v;
     }
@@ -62,6 +63,7 @@ public class Dashboard extends Fragment {
         events2.setText(MainActivity._events2);
         events3.setText(MainActivity._events3);
         youare.setText(MainActivity._youare);
+        tshirt.setText(MainActivity._tshirt);
 
         if ( MainActivity._fathername.equals("-") ) {
 
