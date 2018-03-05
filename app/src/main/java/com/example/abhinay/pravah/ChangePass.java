@@ -56,6 +56,9 @@ public class ChangePass extends Fragment {
                         smallBundle bundle = new smallBundle( oldPassword, newPassword, MainActivity._email );
                         new phpCaller().execute(bundle);
                     }
+                    else {
+                        Toast.makeText(getContext(), "Password must be atleast 8 characters long.", Toast.LENGTH_SHORT).show();
+                    }
 //            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 //            ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
 //            ft.replace(R.id.content_frame, new Dashboard(), "fragment");
