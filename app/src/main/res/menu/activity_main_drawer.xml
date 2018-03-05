@@ -33,9 +33,9 @@
             android:title="Change Password"
             android:visible="false"/>
         <item
-            android:id="@+id/team"
+            android:id="@+id/yourteam"
             android:icon="@drawable/ic_people_black_48dp"
-            android:title="Team"
+            android:title="Your Team"
             android:visible="false"/>
         <item
             android:id="@+id/accomadation"
@@ -65,11 +65,6 @@
                 android:id="@+id/sign_out"
                 android:icon="@drawable/ic_assignment_ind_black_48dp"
                 android:title="Sign Out"
-                android:visible="true"/>
-            <item
-                android:id="@+id/yourteam"
-                android:icon="@drawable/ic_register_48dp"
-                android:title="Your Team"
                 android:visible="true"/>
         </menu>
     </item>

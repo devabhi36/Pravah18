@@ -195,16 +195,14 @@ public class MainActivity extends AppCompatActivity
             changepass(null);
         } else if(id == R.id.profile){
             dashboard(null);
-        } else if(id == R.id.team){
-            team_members(null);
+        } else if(id == R.id.yourteam){
+            yourteam(null);
         } else if(id == R.id.accomadation){
             accomadation(null);
         } else if(id == R.id.sign_in) {
             sign_in(null);
         } else if(id == R.id.sign_out) {
             sign_out(null);
-        } else if (id == R.id.yourteam) {
-            yourteam(null);
         } else if (id == R.id.feedback) {
             feedback(null);
         } else if (id == R.id.about1) {
@@ -462,8 +460,8 @@ public class MainActivity extends AppCompatActivity
         MenuItem changepass = menuNav.findItem(R.id.changepass);
         changepass.setVisible(true);
 
-        MenuItem team = menuNav.findItem(R.id.team);
-        team.setVisible(true);
+        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
+        yourteam.setVisible(true);
 
         MenuItem accomadation = menuNav.findItem(R.id.accomadation);
         accomadation.setVisible(true);
@@ -491,9 +489,6 @@ public class MainActivity extends AppCompatActivity
 
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(false);
-
-        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
-        yourteam.setVisible(false);
 
         MenuItem feedback = menuNav.findItem(R.id.feedback);
         feedback.setVisible(false);
@@ -531,8 +526,8 @@ public class MainActivity extends AppCompatActivity
         MenuItem changepass = menuNav.findItem(R.id.changepass);
         changepass.setVisible(false);
 
-        MenuItem team = menuNav.findItem(R.id.team);
-        team.setVisible(false);
+        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
+        yourteam.setVisible(false);
 
         MenuItem accomadation = menuNav.findItem(R.id.accomadation);
         accomadation.setVisible(false);
@@ -560,9 +555,6 @@ public class MainActivity extends AppCompatActivity
 
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(true);
-
-        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
-        yourteam.setVisible(true);
 
         MenuItem feedback = menuNav.findItem(R.id.feedback);
         feedback.setVisible(true);
@@ -593,8 +585,6 @@ public class MainActivity extends AppCompatActivity
         dash.setVisible(false);
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(false);
-        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
-        yourteam.setVisible(false);
         MenuItem register = menuNav.findItem(R.id.register);
         register.setVisible(true);
         MenuItem sign_in = menuNav.findItem(R.id.sign_in);
@@ -614,8 +604,6 @@ public class MainActivity extends AppCompatActivity
         dash.setVisible(false);
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(false);
-        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
-        yourteam.setVisible(false);
         MenuItem register = menuNav.findItem(R.id.register);
         register.setVisible(true);
         MenuItem sign_in = menuNav.findItem(R.id.sign_in);
@@ -641,8 +629,8 @@ public class MainActivity extends AppCompatActivity
         MenuItem changepass = menuNav.findItem(R.id.changepass);
         changepass.setVisible(false);
 
-        MenuItem team = menuNav.findItem(R.id.team);
-        team.setVisible(false);
+        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
+        yourteam.setVisible(false);
 
         MenuItem accomadation = menuNav.findItem(R.id.accomadation);
         accomadation.setVisible(false);
@@ -667,9 +655,6 @@ public class MainActivity extends AppCompatActivity
 
         MenuItem sign_out = menuNav.findItem(R.id.sign_out);
         sign_out.setVisible(true);
-
-        MenuItem yourteam = menuNav.findItem(R.id.yourteam);
-        yourteam.setVisible(true);
 
         MenuItem feedback = menuNav.findItem(R.id.feedback);
         feedback.setVisible(true);
