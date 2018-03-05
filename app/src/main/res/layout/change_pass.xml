@@ -78,7 +78,7 @@
                     android:fontFamily="cursive"
                     android:gravity="center"
                     android:text="Confirm Password"
-                    android:textSize="23dp"
+                    android:textSize="20dp"
                     android:scrollHorizontally="true"/>
 
                 <EditText
