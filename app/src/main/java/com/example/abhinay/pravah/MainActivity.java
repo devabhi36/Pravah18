@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
     public static int flag = 1;
     public static int new_flag = 0;
 
-    public static String host = "http://192.168.43.239/";
+    public static String host = "https://encore.ietlucknow.ac.in/app/";
 
     public static String _name, _dob, _gender, _email, _mobile, _fathername, _mothername, _aadhaar, _zone, _college, _rollno, _events1, _events2, _events3, _youare;
     public static String[ ] team = { "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1" };

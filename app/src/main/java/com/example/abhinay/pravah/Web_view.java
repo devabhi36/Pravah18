@@ -40,9 +40,9 @@ public class Web_view extends AppCompatActivity {
         } else if(num == 10){
             web.loadUrl("https://www.linkedin.com/in/anushka-awasthi-635b89124/");
         } else if(num == 11){
-            web.loadUrl("https://www.linkedin.com/in/abhinay-s-4bb60894/");
+            web.loadUrl("https://www.facebook.com/abhinay1008");
         } else if(num == 12){
-            web.loadUrl("https://www.linkedin.com/in/harshal-dev-39778b147/");
+            web.loadUrl("https://www.facebook.com/harshal.dev.3");
         }
     }
     public class myWebClient extends WebViewClient

@@ -34,9 +34,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginTop="60dp"
-        android:fontFamily="casual"
-        android:textSize="20dp"
-        android:hint="Email Id"></EditText>
+        android:fontFamily="serif-monospace"
+        android:hint="Email Id"
+        android:textSize="20dp"></EditText>
 
     <ScrollView
         android:layout_width="match_parent"

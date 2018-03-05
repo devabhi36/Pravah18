@@ -124,11 +124,12 @@ public class YourTeam extends AppCompatActivity {
                 t11.setText(names[0][10]);
                 t12.setText(names[0][11]);
 
+                String[] o = {"-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"};
+                MainActivity.team = o;
                 if ( Integer.parseInt(names[1][0]) > 0 )
                 {
                     if ( result.contains("%") ) {
 
-                        String[] o = {"-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"};
                         String email_ = result.substring(result.indexOf("%")+1, result.length());
                         int count = 0;
                         int last = 0;
@@ -144,9 +145,6 @@ public class YourTeam extends AppCompatActivity {
                     }
                 }
 
-            }
-            else {
-                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -190,6 +188,7 @@ public class YourTeam extends AppCompatActivity {
             String prefix = getPrefix();
 
             anotherDataBundle bundle = new anotherDataBundle(MainActivity._email, prefix + emails);
+            updateTeam ( prefix + emails );
             new AsyncSetCaller().execute(bundle);
         }
         else
@@ -197,6 +196,23 @@ public class YourTeam extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Invalid format.", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    private void updateTeam ( String team )
+    {
+        String[ ] o = { "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1" };
+
+        int count = 0;
+        int last = 0;
+        for (int i = 0; i < team.length(); i++) {
+            if (team.substring(i, i + 1).equals(";")) {
+                o[count] = team.substring(last, i);
+                last = i + 1;
+                count++;
+            }
+        }
+
+        MainActivity.team = o;
     }
 
     private String getPrefix ( )
@@ -262,8 +278,6 @@ public class YourTeam extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-
-            Toast.makeText(getApplicationContext(), result.substring(result.indexOf("$")+1, result.length()), Toast.LENGTH_SHORT).show();
 
             String[ ] a = { t1.getText().toString(), t2.getText().toString(), t3.getText().toString(), t4.getText().toString(), t5.getText().toString(), t6.getText().toString(), t7.getText().toString(), t8.getText().toString(), t9.getText().toString(), t10.getText().toString(), t11.getText().toString(), t12.getText().toString() };
 

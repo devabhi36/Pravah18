@@ -42,8 +42,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="DATE OF BIRTH"
-                android:textSize="20dp"
+                android:hint="DATE OF BIRTH (Click Again To open Calender)"
+                android:textSize="17dp"
                 android:layout_marginTop="186dp"
                 android:onClick="dob"
                 android:id="@+id/dob"
@@ -101,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/mobile"
                 android:hint="MOBILE NUMBER"
+                android:inputType="number"
                 android:textSize="20dp"
                 android:layout_marginTop="479dp"
                 android:textColorHint="#ffffff"

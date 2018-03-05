@@ -51,13 +51,30 @@
                 android:onClick="login"
                 android:id="@+id/login"
                 android:textAlignment="center"
-                android:padding="15dp"
+                android:padding="10dp"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:background="@drawable/registerback4"
                 android:layout_alignParentBottom="true"
+                android:layout_marginTop="196dp"
+                android:scrollHorizontally="true"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="FORGOT PASSWORD ?"
+                android:textStyle="italic"
+                android:onClick="forgot"
+                android:id="@+id/forgot"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:background="@drawable/registerback4"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="196dp"/>
+                android:layout_toRightOf="@+id/login"
+                android:layout_alignBaseline="@+id/login"
+                android:scrollHorizontally="true"/>
 
         </RelativeLayout>
     </ScrollView>
