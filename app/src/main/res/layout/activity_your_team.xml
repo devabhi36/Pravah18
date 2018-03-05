@@ -4,7 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.abhinay.pravah.YourTeam">
+    tools:context="com.example.abhinay.pravah.YourTeam"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
 
         <TextView
             android:id="@+id/head"
@@ -157,7 +167,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="350dp"
-                        android:hint="Member 1"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -180,14 +189,16 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/scrollView3"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:paddingLeft="10dp"
         android:text="To add team members, enter their emails STRICTLY in the following format:"
         android:textColor="#000000"
         android:textSize="20dp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/scrollView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
         <EditText
             android:id="@+id/members"
@@ -215,5 +226,8 @@
         android:textStyle="bold"
         android:textColor="#000000"
         android:background="#ffffff"/>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

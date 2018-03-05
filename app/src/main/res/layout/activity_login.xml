@@ -55,9 +55,9 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:background="@drawable/registerback4"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="196dp"
-                android:scrollHorizontally="true"/>
+                android:scrollHorizontally="true"
+                android:layout_marginTop="200dp"
+                android:layout_marginLeft="85dp"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,10 +71,10 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:background="@drawable/registerback4"
-                android:layout_centerHorizontal="true"
-                android:layout_toRightOf="@+id/login"
-                android:layout_alignBaseline="@+id/login"
-                android:scrollHorizontally="true"/>
+                android:scrollHorizontally="true"
+                android:layout_marginTop="311dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
     </ScrollView>
