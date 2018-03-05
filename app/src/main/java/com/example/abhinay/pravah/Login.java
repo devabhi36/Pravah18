@@ -119,7 +119,6 @@ public class Login extends AppCompatActivity {
                     break;
                 }
                 
-                String sb = reader.readLine();
                 return sb.toString();
             }
             catch(Exception e) {
