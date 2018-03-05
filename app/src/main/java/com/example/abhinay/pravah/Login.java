@@ -223,5 +223,72 @@ public class Login extends AppCompatActivity {
 
             return a;
         }
+
+        private class smallBundle {
+            String e;
+            private smallBundle ( String e ) { this.e = e; }
+        }
+
+        public void forgot ( View v )
+        {
+            String vEmail = reg_emial.getText().toString();
+            if ( vEmail.length() > 0 ){
+
+                if (( !vEmail.contains("@") ) && (vEmail.length() < 3)) {
+                    Toast.makeText(getApplicationContext(), "Invalid email format! Enter: example@email.com", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                smallBundle bundle = new smallBundle(vEmail);
+                new phpCaller().execute(bundle);
+            }
+        }
+
+        private class phpCaller extends AsyncTask<smallBundle, Void, String> {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected String doInBackground(smallBundle... data) {
+                String email = data[0].e;
+
+                try {
+
+                    String link = MainActivity.host + "forgot.php";
+                    String data_ = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8");
+                    URL url = new URL(link);
+                    URLConnection conn = url.openConnection();
+
+                    conn.setDoOutput(true);
+                    OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+
+                    wr.write(data_);
+                    wr.flush();
+
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+                    StringBuilder sb = new StringBuilder();
+                    String line = null;
+
+                    // Read Server Response
+                    while ((line = reader.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+
+                    return sb.toString();
+                } catch (Exception e) {
+                    return new String("Exception: " + e.getMessage());
+                }
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
