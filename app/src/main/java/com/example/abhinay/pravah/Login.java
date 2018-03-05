@@ -95,17 +95,17 @@ public class Login extends AppCompatActivity {
             String email = data[0].e;
             String password = data[0].p;
 
-            try{
+            try {
 
                 String link = MainActivity.host + "login.php";
-                String data_  = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8") + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
+                String data_ = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8") + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
                 URL url = new URL(link);
                 URLConnection conn = url.openConnection();
 
                 conn.setDoOutput(true);
                 OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
 
-                wr.write( data_ );
+                wr.write(data_);
                 wr.flush();
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -114,14 +114,13 @@ public class Login extends AppCompatActivity {
                 String line = null;
 
                 // Read Server Response
-                while((line = reader.readLine()) != null) {
+                while ((line = reader.readLine()) != null) {
                     sb.append(line);
                     break;
                 }
-                
+
                 return sb.toString();
-            }
-            catch(Exception e) {
+            } catch (Exception e) {
                 return new String("Exception: " + e.getMessage());
             }
         }
@@ -129,29 +128,28 @@ public class Login extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
 
-            if ( result.equals("Couldn't find anyone registered with that email/password combination in our database.") )
-            {
+            if (result.equals("Couldn't find anyone registered with that email/password combination in our database.")) {
                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
             }
             // Valid result
-            else if ( result.contains("+") ) {
-                String[ ] a = decodeResult( result );
-                String[ ] e = decodeEvents( a[12] );
+            else if (result.contains("+")) {
+                String[] a = decodeResult(result);
+                String[] e = decodeEvents(a[12]);
 
-                MainActivity._name = a[0]+" "+a[1];
+                MainActivity._name = a[0] + " " + a[1];
                 MainActivity._dob = a[2];
                 MainActivity._gender = a[3];
                 MainActivity._email = a[4];
-                MainActivity._mobile = "+91 "+ a[5];
+                MainActivity._mobile = "+91 " + a[5];
                 MainActivity._fathername = a[6];
                 MainActivity._mothername = a[7];
                 MainActivity._aadhaar = a[8];
                 MainActivity._zone = a[9];
                 MainActivity._college = a[10];
                 MainActivity._rollno = a[11];
-                MainActivity._events1 = returnEvent( e[0] );
-                MainActivity._events2 = returnEvent( e[1] );
-                MainActivity._events3 = returnEvent( e[2] );
+                MainActivity._events1 = returnEvent(e[0]);
+                MainActivity._events2 = returnEvent(e[1]);
+                MainActivity._events3 = returnEvent(e[2]);
                 MainActivity._youare = a[13];
                 MainActivity._tshirt = a[14];
 
@@ -163,65 +161,127 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(Login.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-            }
-            else
-            {
+            } else {
                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
             }
         }
+    }
 
-        private String returnEvent ( String e )
+    private String returnEvent ( String e )
+    {
+        if ( !e.equals("-1") )
         {
-            if ( !e.equals("-1") )
+            return list[Integer.parseInt(e)-1];
+        }
+        else {
+            return "";
+        }
+    }
+
+    private String [ ] decodeEvents ( String events )
+    {
+        String[ ] e = new String[3];
+        int count = 0;
+        int last = 0;
+        for ( int i = 0; i < events.length(); i++ )
+        {
+            if ( events.substring(i, i+1).equals(";") )
             {
-                return list[Integer.parseInt(e)-1];
-            }
-            else {
-                return "";
+                if ( !events.substring(last, i).equals("-") ) {
+                    e[count] = events.substring(last, i);
+                } else
+                {
+                    e[count] = "-1";
+                }
+                last = i + 1;
+                count++;
             }
         }
 
-        private String [ ] decodeEvents ( String events )
-        {
-            String[ ] e = new String[3];
-            int count = 0;
-            int last = 0;
-            for ( int i = 0; i < events.length(); i++ )
-            {
-                if ( events.substring(i, i+1).equals(";") )
-                {
-                    if ( !events.substring(last, i).equals("-") ) {
-                        e[count] = events.substring(last, i);
-                    }
-                    else
-                    {
-                        e[count] = "-1";
-                    }
+        return e;
+    }
 
-                    last = i + 1;
-                    count++;
-                }
+    private String [ ] decodeResult( String result )
+    {
+        String[ ] a = new String[15];
+        int count = 0;
+        int last = 0;
+        for ( int i = 0; i < result.length(); i++ ) {
+            if (result.substring(i, i + 1).equals("+")) {
+                a[count] = result.substring(last, i);
+                last = i + 1;
+                count++;
             }
-
-            return e;
         }
 
-        private String [ ] decodeResult( String result )
-        {
-            String[ ] a = new String[15];
-            int count = 0;
-            int last = 0;
-            for ( int i = 0; i < result.length(); i++ )
-            {
-                if ( result.substring(i, i+1).equals("+") )
-                {
-                    a[count] = result.substring(last, i);
-                    last = i + 1;
-                    count++;
-                }
+        return a;
+    }
+
+    private class smallBundle {
+        String e;
+        private smallBundle ( String e ) { this.e = e; }
+    }
+
+    public void forgot ( View v )
+    {
+        String vEmail = reg_emial.getText().toString();
+        if ( vEmail.length() > 0 ){
+
+            if (( !vEmail.contains("@") ) && (vEmail.length() < 3)) {
+                Toast.makeText(getApplicationContext(), "Invalid email format! Enter: example@email.com", Toast.LENGTH_SHORT).show();
+                return;
             }
 
-            return a;
+            Toast.makeText(getApplicationContext(), "Working.", Toast.LENGTH_SHORT).show();
+            smallBundle bundle = new smallBundle(vEmail);
+            new phpCaller().execute(bundle);
+        }
+    }
+
+    private class phpCaller extends AsyncTask<smallBundle, Void, String> {
+
+        @Override
+        protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+        @Override
+        protected String doInBackground(smallBundle... data) {
+            String email = data[0].e;
+
+             try {
+
+                 String link = MainActivity.host + "forgot.php";
+                 String data_ = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8");
+                 URL url = new URL(link);
+                 URLConnection conn = url.openConnection();
+
+                 conn.setDoOutput(true);
+                 OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+
+                 wr.write(data_);
+                 wr.flush();
+
+                 BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+                 StringBuilder sb = new StringBuilder();
+                 String line = null;
+
+                 // Read Server Response
+                 while ((line = reader.readLine()) != null) {
+                     sb.append(line);
+                     break;
+                 }
+
+                 return sb.toString();
+             } catch (Exception e) {
+                 return new String("Exception: " + e.getMessage());
+             }
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
         }
     }
 }
