@@ -232,7 +232,6 @@ public class Login extends AppCompatActivity {
                 return;
             }
 
-            Toast.makeText(getApplicationContext(), "Working.", Toast.LENGTH_SHORT).show();
             smallBundle bundle = new smallBundle(vEmail);
             new phpCaller().execute(bundle);
         }
