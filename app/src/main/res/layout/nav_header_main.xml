@@ -17,7 +17,7 @@
         android:layout_width="84dp"
         android:layout_height="70dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/logo_new"
+        app:srcCompat="@drawable/logo"
         android:layout_marginLeft="-15dp"/>
 
     <TextView
