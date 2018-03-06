@@ -23,7 +23,6 @@ public class Event extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.event,container,false);
-        Toast.makeText(getContext(), "Click On CULTURAL, ARTS, OTHER EVENTS to open them.", Toast.LENGTH_SHORT).show();
         return v;
     }
 

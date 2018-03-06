@@ -248,11 +248,20 @@ public class MainActivity extends AppCompatActivity
         ft.commit();
         flag=0;
 
+        NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
+        Menu menuNav=navigationView.getMenu();
+
+        MenuItem events = menuNav.findItem(R.id.events1);
+        if(events.isVisible()== true){
+            Toast.makeText(getApplicationContext(),"Click On CULTURAL, ARTS, OTHER EVENTS to open them.", Toast.LENGTH_SHORT).show();
+        }
+
         if(new_flag == 1){
             hide_show5();
         } else {
             hide_show4();
         }
+
     }
         public void cultural(View v31){
             NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);

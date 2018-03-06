@@ -64,7 +64,7 @@ public class Accommodation extends Fragment {
                 message.setVisibility(View.VISIBLE);
                 upi_no.setVisibility(View.VISIBLE);
 
-
+                message2.setVisibility(View.VISIBLE);
                 trans_id.setVisibility(View.VISIBLE);
                 submit.setVisibility(View.VISIBLE);
             }
