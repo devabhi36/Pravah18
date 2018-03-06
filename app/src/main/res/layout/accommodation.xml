@@ -21,11 +21,11 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="serif"
         android:text="Pay your Accommodation through UPI to Number:"
         android:textColor="#000000"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:layout_marginLeft="20dp"
         android:visibility="invisible"/>
 
@@ -34,11 +34,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="200dp"
         android:fontFamily="sans-serif"
         android:hint="UPI NO"
         android:textColor="#000000"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:visibility="invisible"/>
 
@@ -47,11 +47,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="260dp"
         android:fontFamily="sans-serif"
         android:hint=""
         android:textColor="@android:color/holo_red_light"
-        android:textSize="25dp"/>
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/fi_status"
@@ -59,19 +59,30 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="260dp"
         android:fontFamily="sans-serif"
         android:hint=""
         android:textColor="@android:color/holo_green_dark"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
+    <TextView
+        android:id="@+id/message2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="330dp"
+        android:fontFamily="sans-serif"
+        android:text="Afterwards enter your transaction id below:"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:visibility="invisible"/>
     <EditText
         android:id="@+id/trans_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter your Transaction ID"
         android:textSize="20dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="380dp"
         android:layout_marginLeft="20dp"
         android:layout_centerHorizontal="true"
         android:textColor="#000000"
@@ -85,7 +96,7 @@
         android:textColor="@color/colorPrimary"
         android:textSize="30dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="410dp"
+        android:layout_marginTop="430dp"
         android:visibility="invisible"/>
 
 

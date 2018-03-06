@@ -26,7 +26,7 @@ import java.net.URLEncoder;
 
 public class Accommodation extends Fragment {
     CheckBox confirm;
-    TextView message, upi_no, ini_status, fi_status;
+    TextView message, upi_no, ini_status, fi_status, message2;
     EditText trans_id;
     Button submit;
 
@@ -49,6 +49,7 @@ public class Accommodation extends Fragment {
         upi_no = (TextView)v.findViewById(R.id.upi_no);
         ini_status = (TextView)v.findViewById(R.id.ini_status);
         fi_status = (TextView)v.findViewById(R.id.fi_status);
+        message2 = (TextView)v.findViewById(R.id.message2);
         trans_id = (EditText)v.findViewById(R.id.trans_id);
         submit = (Button)v.findViewById(R.id.submitID);
 
@@ -62,6 +63,7 @@ public class Accommodation extends Fragment {
             {
                 message.setVisibility(View.VISIBLE);
                 upi_no.setVisibility(View.VISIBLE);
+
 
                 trans_id.setVisibility(View.VISIBLE);
                 submit.setVisibility(View.VISIBLE);
@@ -86,6 +88,7 @@ public class Accommodation extends Fragment {
                     message.setVisibility(View.VISIBLE);
                     upi_no.setVisibility(View.VISIBLE);
 
+                    message2.setVisibility(View.VISIBLE);
                     trans_id.setVisibility(View.VISIBLE);
                     submit.setVisibility(View.VISIBLE);
 
@@ -96,6 +99,7 @@ public class Accommodation extends Fragment {
                     message.setVisibility(View.INVISIBLE);
                     upi_no.setVisibility(View.INVISIBLE);
 
+                    message2.setVisibility(View.INVISIBLE);
                     trans_id.setVisibility(View.INVISIBLE);
                     submit.setVisibility(View.INVISIBLE);
 
