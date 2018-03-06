@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity
 
     public static String host = "https://encore.ietlucknow.ac.in/app/";
 
-    public static String _name, _dob, _gender, _email, _mobile, _fathername, _mothername, _aadhaar, _zone, _college, _rollno, _events1, _events2, _events3, _youare, _tshirt;
+    public static String _name, _dob, _gender, _email, _mobile, _fathername, _mothername, _aadhaar, _zone, _college, _rollno, _events1, _events2, _events3, _youare, _tshirt, _transactionID, _transactionStatus;
     public static String[ ] team = { "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1" };
 
     ViewPager mViewPager;
@@ -449,9 +449,11 @@ public class MainActivity extends AppCompatActivity
         hide_show1();
     }
     public void accomadation(View accomadation){
-        String web = "https://aktu.ac.in/pravah/";
-        WebView website = new WebView(getApplicationContext());
-        website.loadUrl(web);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
+        ft.replace(R.id.content_frame, new Accommodation(), "fragment");
+        ft.commit();
+
         hide_show1();
     }
     FragmentManager fragmentManager = getSupportFragmentManager();

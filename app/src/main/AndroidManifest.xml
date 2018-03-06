@@ -142,7 +142,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".Email" />
         <activity android:name=".Web_view" />
-        <activity android:name=".YourTeam"></activity>
+        <activity android:name=".YourTeam" />
     </application>
 
 </manifest>
