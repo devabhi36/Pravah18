@@ -27,7 +27,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="137dp"
+        android:layout_marginTop="110dp"
         android:onClick="cultural"/>
 
     <Button
@@ -45,6 +45,23 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="169dp"
+        android:layout_marginBottom="270dp"
         android:onClick="arts"/>
+    <Button
+        android:id="@+id/others"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:text="OTHER EVENTS"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_marginBottom="80dp"
+        android:onClick="others"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

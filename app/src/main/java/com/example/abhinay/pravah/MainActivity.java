@@ -338,6 +338,23 @@ public class MainActivity extends AppCompatActivity
         startActivity(i);
         ((Activity) this).overridePendingTransition(0,0);
     }
+        public void others(View v33){
+            NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
+            Menu menuNav=navigationView.getMenu();
+            MenuItem home = menuNav.findItem(R.id.home);
+            home.setVisible(true);
+
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
+            ft.replace(R.id.content_frame, new Others(), "fragment");
+            ft.commit();
+            flag=3;
+        }
+            public void alfaaz(View v331){
+                Intent i = new Intent(this, Alfaaz.class);
+                startActivity(i);
+                ((Activity) this).overridePendingTransition(0,0);
+            }
     public void schedule(View v3){
         Intent schedule=new Intent(MainActivity.this, Schedule.class);
         startActivity(schedule);
