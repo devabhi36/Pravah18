@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBox
+        android:id="@+id/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Do yo want accomodation?"
+        android:textColor="#000000"
+        android:visibility="invisible"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:fontFamily="serif"
+        android:text="Pay your Accommodation through UPI to Number:"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/upi_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="190dp"
+        android:fontFamily="sans-serif"
+        android:hint="UPI NO"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/ini_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="250dp"
+        android:fontFamily="sans-serif"
+        android:hint=""
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/fi_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="250dp"
+        android:fontFamily="sans-serif"
+        android:hint=""
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/trans_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Transaction ID"
+        android:textSize="20dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/submitID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:background="#ffffff"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="410dp"
+        android:visibility="invisible"/>
+
+
+    </RelativeLayout>

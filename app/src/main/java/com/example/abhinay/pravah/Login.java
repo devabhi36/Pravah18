@@ -152,6 +152,8 @@ public class Login extends AppCompatActivity {
                 MainActivity._events3 = returnEvent(e[2]);
                 MainActivity._youare = a[13];
                 MainActivity._tshirt = a[14];
+                MainActivity._transactionID = a[15];
+                MainActivity._transactionStatus = a[16];
 
                 Toast.makeText(getApplicationContext(), "Signed In, view your details from the Dashboard.", Toast.LENGTH_SHORT).show();
 
@@ -203,7 +205,7 @@ public class Login extends AppCompatActivity {
 
     private String [ ] decodeResult( String result )
     {
-        String[ ] a = new String[15];
+        String[ ] a = new String[17];
         int count = 0;
         int last = 0;
         for ( int i = 0; i < result.length(); i++ ) {
