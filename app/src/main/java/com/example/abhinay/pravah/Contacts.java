@@ -1,5 +1,7 @@
 package com.example.abhinay.pravah;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -116,7 +118,17 @@ public class Contacts extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if(id== R.id.rate){
+            Intent intent=new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://www.javatpoint.com"));
+            startActivity(intent);
+            return true;
+        } else if(id == R.id.share){
+            Intent shareIntent=new Intent(android.content.Intent.ACTION_SEND);
+            shareIntent.setType("text/italic");
+            String app_url = " https://play.google.com/store/apps/details?id=my.example.javatpoint";
+            shareIntent.putExtra(Intent.EXTRA_TEXT, app_url);
+            startActivity(Intent.createChooser(shareIntent, "Share via"));
             return true;
         }
 

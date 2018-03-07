@@ -335,6 +335,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     public void dob(View view){
         DatePickerFragment fragment = new DatePickerFragment();
         fragment.show(getSupportFragmentManager(), "date");
+        Toast.makeText(getApplicationContext(), "Click on 12 to change year.", Toast.LENGTH_SHORT).show();
     }
 
     private void setDate(final Calendar calendar){
