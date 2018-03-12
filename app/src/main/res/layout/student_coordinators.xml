@@ -42,7 +42,7 @@
                     android:layout_marginTop="50dp"
                     android:fontFamily="cursive"
                     android:text="Ashwani Sharma"
-                    android:textColor="@color/aasmaani"
+                    android:textColor="#0000ff"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 
@@ -95,7 +95,7 @@
                     android:layout_marginTop="50dp"
                     android:fontFamily="cursive"
                     android:text="Anushka Awasthi"
-                    android:textColor="@color/aasmaani"
+                    android:textColor="#0000ff"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 

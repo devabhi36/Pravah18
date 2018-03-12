@@ -104,7 +104,7 @@ public class PRAVAH extends Fragment {
                     startActivity(i4);
                     return true;
             }
-                 return false;
+                 return true;
              }
          });
     }

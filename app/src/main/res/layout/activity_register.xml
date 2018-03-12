@@ -290,7 +290,12 @@
                 android:textColor="#ffffff"
                 android:background="@drawable/registerback4"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="1480dp" />
+                android:layout_marginTop="1420dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1625dp"
+                android:editable="false"/>
 
         </RelativeLayout>
     </ScrollView>
