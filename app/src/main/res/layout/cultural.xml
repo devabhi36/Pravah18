@@ -4,12 +4,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="@color/aasmaani">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarc"
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="#000000" />
+        android:background="@color/aasmaani" />
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/mimiicry"
+                android:src="@drawable/mimicry"
                 android:onClick="comedy"/>
         </android.support.v7.widget.CardView>
 

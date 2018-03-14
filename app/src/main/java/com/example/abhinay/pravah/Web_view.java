@@ -1,9 +1,12 @@
 package com.example.abhinay.pravah;
 
 import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -70,6 +73,16 @@ public class Web_view extends AppCompatActivity {
             web.goBack();
             return true;
         }
+        BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+               MenuItem gh = (MenuItem) findViewById(R.id.bottomhome);
+                item = gh;
+                item.setChecked(true);
+                return false;
+            }
+        });
         return super.onKeyDown(keyCode, event);
     }
 }

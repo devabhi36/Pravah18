@@ -335,6 +335,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     public void dob(View view){
         DatePickerFragment fragment = new DatePickerFragment();
         fragment.show(getSupportFragmentManager(), "date");
+        Toast.makeText(getApplicationContext(), "Click to change year.", Toast.LENGTH_SHORT).show();
     }
 
     private void setDate(final Calendar calendar){
@@ -509,7 +510,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Calendar c = Calendar.getInstance();
-            int year = c.get(Calendar.YEAR);
+            int year = c.get(Calendar.DATE);
             int month = c.get(Calendar.MONTH);
             int day = c.get(Calendar.DAY_OF_MONTH);
 

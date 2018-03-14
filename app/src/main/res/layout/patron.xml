@@ -46,7 +46,7 @@
                     android:fontFamily="cursive"
                     android:text="Dr. H.K. Palliwal, Director"
                     android:textAllCaps="false"
-                    android:textColor="@color/aasmaani"
+                    android:textColor="#0000ff"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 

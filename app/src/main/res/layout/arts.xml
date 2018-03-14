@@ -4,13 +4,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
-
+    android:background="@color/aasmaani">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbara"
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="#000000"
+        android:background="@color/aasmaani"
         app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     <RelativeLayout
@@ -53,7 +52,7 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/t_shirt"
+                android:src="@drawable/tshirt"
                 android:onClick="tshirt"/>
         </android.support.v7.widget.CardView>
 

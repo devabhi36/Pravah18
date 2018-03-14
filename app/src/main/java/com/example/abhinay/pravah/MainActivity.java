@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -160,11 +161,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-         if(id== R.id.rate){
-            Toast.makeText(this, "Url to be added", Toast.LENGTH_SHORT).show();
+        if(id== R.id.rate){
+            Intent intent=new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://www.javatpoint.com"));
+            startActivity(intent);
             return true;
         } else if(id == R.id.share){
-            Toast.makeText(this,"After getting the URL", Toast.LENGTH_SHORT).show();
+            Intent shareIntent=new Intent(android.content.Intent.ACTION_SEND);
+            shareIntent.setType("text/italic");
+            String app_url = " https://play.google.com/store/apps/details?id=my.example.javatpoint";
+            shareIntent.putExtra(Intent.EXTRA_TEXT, app_url);
+            startActivity(Intent.createChooser(shareIntent, "Share via"));
             return true;
         }
 
@@ -365,8 +372,9 @@ public class MainActivity extends AppCompatActivity
                 ((Activity) this).overridePendingTransition(0,0);
             }
     public void schedule(View v3){
-        Intent schedule=new Intent(MainActivity.this, Schedule.class);
-        startActivity(schedule);
+//        Intent schedule=new Intent(MainActivity.this, Schedule.class);
+//        startActivity(schedule);
+        Toast.makeText(getApplicationContext(),"Will be announced shortly :)", Toast.LENGTH_SHORT).show();
     }
     public void map(View v5){
         Intent map=new Intent(MainActivity.this, Maps.class);

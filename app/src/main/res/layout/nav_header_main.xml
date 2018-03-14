@@ -36,21 +36,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:soundEffectsEnabled="false"
-        android:text="Abdul Kalam Technical University"
+        android:text="Dr. Abdul Kalam Arts &amp; Cultural Fest"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textStyle="bold|italic"
         android:layout_marginBottom="0dp"
         android:textSize="15dp"
-        android:layout_marginLeft="5dp"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:text="Arts and Cultural Fest"
-        android:textSize="15dp"
-        android:textStyle="bold|italic"
-        android:shadowColor="#ffffff"/>
+        android:layout_marginLeft="0dp"/>
 
 </LinearLayout>
