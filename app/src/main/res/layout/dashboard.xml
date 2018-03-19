@@ -165,14 +165,15 @@
                     android:layout_marginTop="-55dp"
                     android:fontFamily="monospace"
                     android:hint="COLLEGE"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:layout_marginLeft="5dp"/>
 
                 <TextView
                     android:id="@+id/daadhaar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="-25dp"
+                    android:layout_marginTop="-5dp"
                     android:fontFamily="monospace"
                     android:hint="AADHAAR NO"
                     android:textSize="20dp" />
@@ -182,7 +183,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="25dp"
                     android:fontFamily="monospace"
                     android:hint=""
                     android:textSize="20dp" />
@@ -192,7 +193,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="35dp"
+                    android:layout_marginTop="55dp"
                     android:fontFamily="monospace"
                     android:hint=""
                     android:textSize="20dp" />
@@ -202,7 +203,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="65dp"
+                    android:layout_marginTop="85dp"
                     android:fontFamily="monospace"
                     android:hint=""
                     android:textSize="20dp" />
@@ -212,7 +213,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="95dp"
+                    android:layout_marginTop="115dp"
                     android:fontFamily="monospace"
                     android:hint=""
                     android:textSize="20dp" />
@@ -222,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="125dp"
+                    android:layout_marginTop="145dp"
                     android:fontFamily="monospace"
                     android:hint="Tshirt"
                     android:textSize="20dp" />

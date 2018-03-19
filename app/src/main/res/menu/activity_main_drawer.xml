@@ -40,7 +40,7 @@
         <item
             android:id="@+id/accomadation"
             android:icon="@drawable/accomadation"
-            android:title="Accomadation"
+            android:title="Accommodation"
             android:visible="false"/>
     </group>
     <item android:title="Join Us"

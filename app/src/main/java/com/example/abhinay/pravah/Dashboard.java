@@ -49,6 +49,7 @@ public class Dashboard extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Your Profile");
+        MainActivity.forback = 0;
 
         name.setText(MainActivity._name);
         dob.setText(MainActivity._dob);

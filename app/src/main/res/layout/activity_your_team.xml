@@ -47,7 +47,6 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -59,7 +58,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="35dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -71,7 +69,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="70dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -83,7 +80,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="105dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -95,7 +91,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="140dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -107,7 +102,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="175dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -119,7 +113,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="210dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -131,7 +124,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="245dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -143,7 +135,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="280dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -155,7 +146,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="315dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -178,7 +168,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
                         android:layout_marginTop="385dp"
-                        android:fontFamily="cursive"
                         android:textColor="#A52A2A"
                         android:textSize="20dp"
                         android:textStyle="bold" />

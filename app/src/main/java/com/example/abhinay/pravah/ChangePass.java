@@ -81,6 +81,7 @@ public class ChangePass extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("CHANGE PASSWORD");
+        MainActivity.forback = 1;
     }
 
     private class phpCaller extends AsyncTask<smallBundle, Void, String> {

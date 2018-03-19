@@ -224,5 +224,6 @@ public class Accommodation extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("ACCOMMODATION");
+        MainActivity.forback = 1;
     }
 }
