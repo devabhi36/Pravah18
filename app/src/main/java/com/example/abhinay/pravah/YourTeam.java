@@ -46,6 +46,7 @@ public class YourTeam extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_team);
+        MainActivity.flag = 0;
 
         t1 = (TextView)findViewById(R.id.t1);
         t2 = (TextView)findViewById(R.id.t2);

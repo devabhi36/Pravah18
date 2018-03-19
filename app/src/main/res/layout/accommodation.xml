@@ -5,6 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <CheckBox
         android:id="@+id/confirm"
@@ -24,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:fontFamily="serif"
-        android:text="Pay your Accommodation through UPI to Number:"
+        android:text="Pay your Accommodation Fee through UPI to Number:"
         android:textColor="#000000"
         android:textSize="20dp"
         android:layout_marginLeft="20dp"
@@ -99,6 +110,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="430dp"
         android:visibility="invisible"/>
-
-
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:layout_marginTop="700dp"/>
+            </RelativeLayout>
+    </ScrollView>
     </RelativeLayout>

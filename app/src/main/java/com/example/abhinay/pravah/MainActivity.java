@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static int flag = 1;
     public static int new_flag = 0;
+    public static int forback = 0;
 
     public static String host = "https://encore.ietlucknow.ac.in/app/";
 
@@ -131,6 +132,13 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+
+        } else if(forback == 1){
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
+            ft.replace(R.id.content_frame, new Dashboard(), "fragment");
+            ft.commit();
+            hide_show1();
         } else if(flag==0){
             flag=1;
            home(null);
