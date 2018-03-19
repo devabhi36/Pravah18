@@ -3,6 +3,7 @@ package com.example.abhinay.pravah;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -12,17 +13,20 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -37,6 +41,9 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Login extends AppCompatActivity {
+    ImageView loader;
+    public static int waiting = 0;
+
     String[ ] list = { "Collage Making", "Face Painting", "Mehandi Design", "Poster Making", "3D Rangoli/Painting", "T-shirt Painting", "", "", "", "Bandwars", "Fashion Jalwa", "Solo Dance", "Duet Dance", "Group Dance", "Mimicry/Standup Comedy", "Solo Singing", "Duet Singing", "Group Singing", "Skit/Play" };
 
     EditText reg_emial, reg_password;
@@ -63,23 +70,26 @@ public class Login extends AppCompatActivity {
 
     public void login(View view){
 
-        String vEmail = reg_emial.getText().toString();
-        String vPassword = reg_password.getText().toString();
+        if ( waiting == 0 ) {
 
-        if ( vEmail.length() > 0 && vPassword.length() > 0 ){
+            String vEmail = reg_emial.getText().toString();
+            String vPassword = reg_password.getText().toString();
 
-            if (( !vEmail.contains("@") ) && (vEmail.length() < 3)) {
-                Toast.makeText(this, "Invalid email format! Enter: example@email.com", Toast.LENGTH_SHORT).show();
-                return;
+            if (vEmail.length() > 0 && vPassword.length() > 0) {
+
+                if ((!vEmail.contains("@")) && (vEmail.length() < 3)) {
+                    Toast.makeText(this, "Invalid email format! Enter: example@email.com", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (vPassword.length() < 8) {
+                    Toast.makeText(this, "Password must be atleast 8 characters long.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                dataBundle bundle = new dataBundle(vEmail, vPassword);
+                new AsyncCaller().execute(bundle);
             }
-
-            if ( vPassword.length() < 8 ) {
-                Toast.makeText(this, "Password must be atleast 8 characters long.", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            dataBundle bundle = new dataBundle(vEmail, vPassword);
-            new AsyncCaller().execute(bundle);
         }
     }
 
@@ -87,7 +97,17 @@ public class Login extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
+
+            View view = Login.this.getCurrentFocus();
+            if (view != null) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+
+            loader = (ImageView)findViewById(R.id.loader);
+            loader.setImageResource(R.mipmap.loader);
+
+            waiting = 1;
         }
 
         @Override
@@ -163,6 +183,10 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(Login.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+
+                loader.setVisibility(View.INVISIBLE);
+                waiting = 0;
+
             } else {
                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
             }
@@ -226,16 +250,19 @@ public class Login extends AppCompatActivity {
 
     public void forgot ( View v )
     {
-        String vEmail = reg_emial.getText().toString();
-        if ( vEmail.length() > 0 ){
+        if ( waiting == 0 ) {
 
-            if (( !vEmail.contains("@") ) && (vEmail.length() < 3)) {
-                Toast.makeText(getApplicationContext(), "Invalid email format! Enter: example@email.com", Toast.LENGTH_SHORT).show();
-                return;
+            String vEmail = reg_emial.getText().toString();
+            if ( vEmail.length() > 0 ){
+
+                if (( !vEmail.contains("@") ) && (vEmail.length() < 3)) {
+                    Toast.makeText(getApplicationContext(), "Invalid email format! Enter: example@email.com", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                smallBundle bundle = new smallBundle(vEmail);
+                new phpCaller().execute(bundle);
             }
-
-            smallBundle bundle = new smallBundle(vEmail);
-            new phpCaller().execute(bundle);
         }
     }
 
@@ -243,8 +270,19 @@ public class Login extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-                super.onPreExecute();
+
+            View view = Login.this.getCurrentFocus();
+            if (view != null) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
+
+            loader = (ImageView)findViewById(R.id.loader);
+            loader.setImageResource(R.mipmap.loader);
+
+            waiting = 1;
+
+        }
 
         @Override
         protected String doInBackground(smallBundle... data) {
@@ -282,6 +320,10 @@ public class Login extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
+
+            waiting = 0;
+            loader.setVisibility(View.INVISIBLE);
+
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
         }
     }

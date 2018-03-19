@@ -3,6 +3,7 @@ package com.example.abhinay.pravah;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -14,11 +15,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.support.v4.app.DialogFragment;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -36,6 +39,9 @@ import java.util.GregorianCalendar;
 public class Register extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, AdapterView.OnItemSelectedListener{
     ArrayAdapter genderA, youareA, zoneA, event1A, event2A, event3A, tshirtA;
     Spinner genderS, youareS, zoneS, event1S, event2S, event3S, tshirtS;
+
+    public static int waiting = 0;
+    ImageView loader;
 
     EditText firstname, lastname, dob, email, password, cpassword, mobile, fathername, mothername, aadhaar, rollno, college;
     int gen, you, zon, tsh;
@@ -159,80 +165,78 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
 
     public void submit(View view) {
 
-        String valueFirstname = firstname.getText().toString();
-        String valueLastname = lastname.getText().toString();
-        String valueDob = dob.getText().toString();
-        String valueEmail = email.getText().toString();
-        String valuePassword = password.getText().toString();
-        String valueCPassword = cpassword.getText().toString();
-        String valueFather = fathername.getText().toString();
-        String valueMother = mothername.getText().toString();
-        String valueCollege = college.getText().toString();
-        String valueMobile = mobile.getText().toString();
-        String valueAadhar = aadhaar.getText().toString();
-        String valueRollno = rollno.getText().toString();
+        if ( waiting == 0 ) {
 
-        if ( ( valueFirstname.length() > 0 ) && ( valueLastname.length() > 0 ) && ( valueDob.length() > 0 ) && ( valueEmail.length() > 0 ) && ( valuePassword.length() > 0 ) && ( valueFather.length() > 0 ) && ( valueMother.length() > 0 ) && ( valueCollege.length() > 0 ) && ( valueAadhar.length() > 0 ) && ( valueRollno.length() > 0 ) ) {
+            String valueFirstname = firstname.getText().toString();
+            String valueLastname = lastname.getText().toString();
+            String valueDob = dob.getText().toString();
+            String valueEmail = email.getText().toString();
+            String valuePassword = password.getText().toString();
+            String valueCPassword = cpassword.getText().toString();
+            String valueFather = fathername.getText().toString();
+            String valueMother = mothername.getText().toString();
+            String valueCollege = college.getText().toString();
+            String valueMobile = mobile.getText().toString();
+            String valueAadhar = aadhaar.getText().toString();
+            String valueRollno = rollno.getText().toString();
 
-            if ( valueDob.length() > 10 )
-            {
-                // Format the date for the database.
-                int comma = valueDob.indexOf(",");
+            if ((valueFirstname.length() > 0) && (valueLastname.length() > 0) && (valueDob.length() > 0) && (valueEmail.length() > 0) && (valuePassword.length() > 0) && (valueFather.length() > 0) && (valueMother.length() > 0) && (valueCollege.length() > 0) && (valueAadhar.length() > 0) && (valueRollno.length() > 0)) {
 
-                String year = valueDob.substring(comma + 2, comma + 6);
-                String mon = returnD(valueDob.substring(0, 3));
-                String date = valueDob.substring(4, comma);
+                if (valueDob.length() > 10) {
+                    // Format the date for the database.
+                    int comma = valueDob.indexOf(",");
 
-                if (Integer.parseInt(date) < 10)
-                    date = "0" + date;
+                    String year = valueDob.substring(comma + 2, comma + 6);
+                    String mon = returnD(valueDob.substring(0, 3));
+                    String date = valueDob.substring(4, comma);
 
-                valueDob = year + "-" + mon + "-" + date;
-            }
-            else
-            {
-                Toast.makeText(this, "Invalid date format!", Toast.LENGTH_SHORT).show();
+                    if (Integer.parseInt(date) < 10)
+                        date = "0" + date;
+
+                    valueDob = year + "-" + mon + "-" + date;
+                } else {
+                    Toast.makeText(this, "Invalid date format!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (valuePassword.length() < 8) {
+                    Toast.makeText(this, "Password must be atleast 8 characters long.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if ((!valueEmail.contains("@")) && (valueEmail.length() < 3)) {
+                    Toast.makeText(this, "Invalid email format! Enter: example@email.com", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!valuePassword.equals(valueCPassword)) {
+                    Toast.makeText(this, "Your entered passwords do not match!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (valueMobile.length() != 10) {
+                    Toast.makeText(this, "Phone number must consist of 10 digits.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (valueAadhar.length() != 14) {
+                    Toast.makeText(this, "Invalid format for Aadhaar. Enter: XXXX XXXX XXXX", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int valueZone = zon;
+                int valueGender = gen;
+                int valueYouAre = you;
+                int valueTshirt = tsh;
+
+                String valueEvents = e1 + ";" + e2 + ";" + e3 + ";";
+
+                dataBundle bundle = new dataBundle(valueFirstname, valueLastname, valueDob, valueEmail, valueGender, valuePassword, valueFather, valueMother, valueCollege, valueMobile, valueAadhar, valueRollno, valueZone, valueEvents, valueYouAre, valueTshirt);
+                new AsyncCaller().execute(bundle);
+            } else {
+                Toast.makeText(this, "All fields are mandatory!", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            if ( valuePassword.length() < 8 ) {
-                Toast.makeText(this, "Password must be atleast 8 characters long.", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (( !valueEmail.contains("@") ) && (valueEmail.length() < 3)) {
-                Toast.makeText(this, "Invalid email format! Enter: example@email.com", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (!valuePassword.equals(valueCPassword)) {
-                Toast.makeText(this, "Your entered passwords do not match!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (valueMobile.length() != 10) {
-                Toast.makeText(this, "Phone number must consist of 10 digits.", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (valueAadhar.length() != 14) {
-                Toast.makeText(this, "Invalid format for Aadhaar. Enter: XXXX XXXX XXXX", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            int valueZone = zon;
-            int valueGender = gen;
-            int valueYouAre = you;
-            int valueTshirt = tsh;
-
-            String valueEvents = e1+";"+e2+";"+e3+";";
-
-            dataBundle bundle = new dataBundle(valueFirstname, valueLastname, valueDob, valueEmail, valueGender, valuePassword, valueFather, valueMother, valueCollege, valueMobile, valueAadhar, valueRollno, valueZone, valueEvents, valueYouAre, valueTshirt);
-            new AsyncCaller().execute(bundle);
-        }
-        else
-        {
-            Toast.makeText(this, "All fields are mandatory!", Toast.LENGTH_SHORT).show();
-            return;
         }
     }
 
@@ -258,7 +262,19 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     private class AsyncCaller extends AsyncTask<dataBundle, Void, String> {
 
         @Override
-        protected void onPreExecute() { super.onPreExecute(); }
+        protected void onPreExecute() {
+
+            View view = Register.this.getCurrentFocus();
+            if (view != null) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+
+            loader = (ImageView)findViewById(R.id.loader);
+            loader.setImageResource(R.mipmap.loader);
+
+            waiting = 1;
+        }
 
         @Override
         protected String doInBackground(dataBundle... data) {
@@ -319,6 +335,9 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
 
                 Intent intent = new Intent(Register.this, Login.class);
                 startActivity(intent);
+
+                loader.setVisibility(View.INVISIBLE);
+                waiting = 0;
             }
             else if ( result.equals("An account with the given email is already registered!") )
             {

@@ -1,11 +1,14 @@
 package com.example.abhinay.pravah;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +20,8 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 
 public class YourTeam extends AppCompatActivity {
+    public static int waiting = 0;
+    ImageView loader, loader2;
 
     TextView t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12;
     EditText mem;
@@ -65,7 +70,9 @@ public class YourTeam extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
+
+            loader = (ImageView)findViewById(R.id.loader);
+            loader.setImageResource(R.mipmap.loader);
         }
 
         @Override
@@ -125,6 +132,8 @@ public class YourTeam extends AppCompatActivity {
                 t11.setText(names[0][10]);
                 t12.setText(names[0][11]);
 
+                loader.setVisibility(View.INVISIBLE);
+
                 String[] o = {"-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"};
                 MainActivity.team = o;
                 if ( Integer.parseInt(names[1][0]) > 0 )
@@ -183,20 +192,27 @@ public class YourTeam extends AppCompatActivity {
 
     public void addMembers ( View theButton )
     {
-        String emails = fixString ( mem.getText().toString() );
-        if ( emails.length() > 0 && emails.contains(";") )
-        {
-            String prefix = getPrefix();
+        if ( waiting == 0 ) {
 
-            anotherDataBundle bundle = new anotherDataBundle(MainActivity._email, prefix + emails);
-            updateTeam ( prefix + emails );
-            new AsyncSetCaller().execute(bundle);
-        }
-        else
-        {
-            Toast.makeText(getApplicationContext(), "Invalid format.", Toast.LENGTH_SHORT).show();
-        }
+            String emails = fixString(mem.getText().toString());
+            if ( !emails.equals(";") ) {
 
+                if (emails.length() > 0 && emails.contains(";")) {
+                    String prefix = getPrefix();
+
+                    anotherDataBundle bundle = new anotherDataBundle(MainActivity._email, prefix + emails);
+                    updateTeam(prefix + emails);
+                    new AsyncSetCaller().execute(bundle);
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Invalid format.", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "No email ID entered.", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void updateTeam ( String team )
@@ -205,7 +221,7 @@ public class YourTeam extends AppCompatActivity {
 
         int count = 0;
         int last = 0;
-        for (int i = 0; i < team.length(); i++) {
+        for (int i = 0; i < team.length() && count < 12; i++) {
             if (team.substring(i, i + 1).equals(";")) {
                 o[count] = team.substring(last, i);
                 last = i + 1;
@@ -238,7 +254,17 @@ public class YourTeam extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
+
+            View view = YourTeam.this.getCurrentFocus();
+            if (view != null) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+
+            loader2 = (ImageView)findViewById(R.id.loader2);
+            loader2.setImageResource(R.mipmap.loader);
+
+            waiting = 1;
         }
 
         @Override
@@ -308,12 +334,22 @@ public class YourTeam extends AppCompatActivity {
                 t11.setText(a[10]);
                 t12.setText(a[11]);
 
+                loader2.setVisibility(View.INVISIBLE);
+                waiting = 0;
+
+                Toast.makeText(getApplicationContext(), result.substring(0, result.indexOf("$")), Toast.LENGTH_LONG).show();
+                mem.setText("");
             }
         }
     }
 
     private String fixString ( String g )
     {
+        if ( g.length() == 0 ) {
+
+            return g + ";";
+        }
+
         if ( !((g.substring(g.length()-1, g.length())).equals(";")) )
         {
             g = g + ";";
