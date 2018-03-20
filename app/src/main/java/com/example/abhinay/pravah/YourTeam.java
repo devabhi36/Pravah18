@@ -211,11 +211,18 @@ public class YourTeam extends AppCompatActivity {
                 if (emails.length() > 0 && emails.contains(";")) {
                     String prefix = getPrefix();
 
-                    anotherDataBundle bundle = new anotherDataBundle(MainActivity._email, prefix + emails);
-                    updateTeam(prefix + emails);
-                    new AsyncSetCaller().execute(bundle);
+                    if ( !checkRepeat( emails ) ) {
 
-                } else {
+                        anotherDataBundle bundle = new anotherDataBundle(MainActivity._email, prefix + emails);
+                        updateTeam(prefix + emails);
+                        new AsyncSetCaller().execute(bundle);
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Team member already added.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
                     Toast.makeText(getApplicationContext(), "Invalid format.", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -241,6 +248,32 @@ public class YourTeam extends AppCompatActivity {
         }
 
         MainActivity.team = o;
+    }
+
+    private boolean checkRepeat( String emails )
+    {
+        boolean repeat = false;
+
+        int count = 0;
+        int last = 0;
+        for ( int i = 0; i < emails.length() && count < 12; i++ )
+        {
+            if ( emails.substring(i, i+1).equals(";") ) {
+                for (int j = 0; j < 12; j++)
+                {
+                    if ( MainActivity.team[j].equals(emails.substring(last, i)) ) {
+
+                        repeat = true;
+                        break;
+                    }
+                }
+
+                last = i + 1;
+                count++;
+            }
+        }
+
+        return repeat;
     }
 
     private String getPrefix ( )

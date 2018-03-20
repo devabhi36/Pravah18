@@ -26,7 +26,7 @@ import java.net.URLEncoder;
 
 public class Accommodation extends Fragment {
     CheckBox confirm;
-    TextView message, upi_no, ini_status, fi_status, message2;
+    TextView message, upi_no, ini_status, fi_status, message1, message2;
     EditText trans_id;
     Button submit;
 
@@ -49,6 +49,7 @@ public class Accommodation extends Fragment {
         upi_no = (TextView)v.findViewById(R.id.upi_no);
         ini_status = (TextView)v.findViewById(R.id.ini_status);
         fi_status = (TextView)v.findViewById(R.id.fi_status);
+        message1 = (TextView)v.findViewById(R.id.message1);
         message2 = (TextView)v.findViewById(R.id.message2);
         trans_id = (EditText)v.findViewById(R.id.trans_id);
         submit = (Button)v.findViewById(R.id.submitID);
@@ -209,7 +210,8 @@ public class Accommodation extends Fragment {
                 MainActivity._transactionID = transactionID;
 
                 ini_status.setText("Payment Verification Pending.");
-                submit.setText("EDIT");
+                message1.setText("Filled in Transaction ID: "+transactionID);
+                submit.setText("Update Transaction ID");
 
                 Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
             }
