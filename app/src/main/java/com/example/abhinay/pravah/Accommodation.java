@@ -33,7 +33,7 @@ public class Accommodation extends Fragment {
     String transactionID;
     boolean isChecked;
 
-    String[ ] UPI = { "ujwlshukla@paytm", "9598162131@upi", "9170000857@ybl", "9918753148@paytm", "priyanshujaiswal42@okaxis", "7985235897@paytm", "945717883@ybl", "945717883@ybl" };
+    String[ ] UPI = { "ujwlshukla@paytm (Ujjwal Shukla)", "9598162131@upi (Markanday Upadhyay)", "9170000857@ybl (Anshu Chaturvedi)", "9918753148@paytm (Shubham Jaiswal)", "priyanshujaiswal42@okaxis (Priyanshu Jaiswal)", "7985235897@paytm (Prashant Singh)", "9457178883@ybl (Ashwani Sharma)", "9457178883@ybl (Ashwani Sharma)" };
 
     private class smallBundle {
         String t, e;

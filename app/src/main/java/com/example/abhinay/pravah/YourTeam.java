@@ -72,6 +72,12 @@ public class YourTeam extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
 
+            View view = YourTeam.this.getCurrentFocus();
+            if (view != null) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+
             loader = (ImageView)findViewById(R.id.loader);
             loader.setImageResource(R.mipmap.loader);
         }
@@ -133,8 +139,6 @@ public class YourTeam extends AppCompatActivity {
                 t11.setText(names[0][10]);
                 t12.setText(names[0][11]);
 
-                loader.setVisibility(View.INVISIBLE);
-
                 String[] o = {"-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"};
                 MainActivity.team = o;
                 if ( Integer.parseInt(names[1][0]) > 0 )
@@ -144,7 +148,7 @@ public class YourTeam extends AppCompatActivity {
                         String email_ = result.substring(result.indexOf("%")+1, result.length());
                         int count = 0;
                         int last = 0;
-                        for (int i = 0; i < email_.length(); i++) {
+                        for (int i = 0; ( i < email_.length() ) && ( count < 12 ); i++) {
                             if (email_.substring(i, i + 1).equals("$")) {
                                 o[count] = email_.substring(last, i);
                                 last = i + 1;
@@ -157,6 +161,12 @@ public class YourTeam extends AppCompatActivity {
                 }
 
             }
+            else
+            {
+                t1.setText("No Team Members.");
+            }
+
+            loader.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -171,7 +181,7 @@ public class YourTeam extends AppCompatActivity {
             result = result.substring(0, result.indexOf("%"));
         }
 
-        for ( int i = 0; i < result.length(); i++ )
+        for ( int i = 0; ( i < result.length() ) && ( count < 12 ); i++ )
         {
             if ( result.substring(i, i+1).equals("+") )
             {
