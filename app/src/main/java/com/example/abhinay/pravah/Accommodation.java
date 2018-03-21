@@ -73,6 +73,7 @@ public class Accommodation extends Fragment {
             if ( Integer.parseInt(MainActivity._transactionStatus) == 1 )
             {
                 ini_status.setText("Payment Verification Pending.");
+                message1.setText("Filled in Transaction ID: "+MainActivity._transactionID);
             }
         }
         else
@@ -110,7 +111,7 @@ public class Accommodation extends Fragment {
         });
 
         if ( Integer.parseInt(MainActivity._transactionStatus) == 1 ) {
-            submit.setText("EDIT");
+            submit.setText("Update Transaction ID");
         }
 
         if ( MainActivity._zone.equals(" AGRA")){

@@ -128,9 +128,8 @@ The battle for bands shall be one major event type and annex a stage like no oth
         <b>"3. "</b><i>"Duration: 10 Minutes.\n"</i>
         <b>"4. "</b><i>"The Judges decision will be final and binding to all."</i>
     </string>
-    <string name="alfaaz">
-        "Alfaaz\n"
-        "Poetry, as they say is the language of the souls. And to enhance the evenings to a more graceful side, TheSoulWithin organises an assemblage of poets from the "Poetical Boffins", wherein the established performers shall be touching the sects of Society, Religion, Love and Politics.\n\n"
+    <string name="Kavyotsav">
+        "Poetry, as they say is the language of the souls. And to enhance the evenings to a more graceful side, TheSoulWithin organises an assemblage of established poets wherein the eminent performers shall be touching the sects of Society, Religion, Love and Politics.\n\n"
         "Thus, an exposition of flowing emotions and flawlessness await all at:-\n"
         "#umango_ka_Pravah."
     </string>
@@ -157,7 +156,7 @@ The battle for bands shall be one major event type and annex a stage like no oth
     <string name="title_activity_face">Face Painting</string>
     <string name="title_activity_rangoli">3D Painting/Rangoli</string>
     <string name="title_activity_mehandi">Mehandi Design</string>
-    <string name="title_activity_alfaaz">Alfaaz</string>
+    <string name="title_activity_alfaaz">Kavyotsav</string>
     <string name="title_activity_schedule">SCHEDULE</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_about">ABOUT</string>

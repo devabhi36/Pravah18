@@ -14,6 +14,8 @@ public class Alfaaz extends AppCompatActivity {
         setContentView(R.layout.alfaaz_layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Kavyotsav");
+        getWindow().setTitle("Kavyotsav");
 
     }
 }

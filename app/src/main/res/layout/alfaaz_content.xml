@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:text="@string/alfaaz"
+        android:text="@string/Kavyotsav"
         android:textColor="#ffffff"/>
 
 </android.support.v4.widget.NestedScrollView>
