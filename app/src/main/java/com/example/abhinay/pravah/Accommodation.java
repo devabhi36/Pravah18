@@ -88,6 +88,7 @@ public class Accommodation extends Fragment {
             public void onClick(View v) {
                 if ( !isChecked ) {
                     message.setVisibility(View.VISIBLE);
+                    message1.setVisibility(View.VISIBLE);
                     upi_no.setVisibility(View.VISIBLE);
 
                     message2.setVisibility(View.VISIBLE);
@@ -99,6 +100,7 @@ public class Accommodation extends Fragment {
                 else
                 {
                     message.setVisibility(View.INVISIBLE);
+                    message1.setVisibility(View.INVISIBLE);
                     upi_no.setVisibility(View.INVISIBLE);
 
                     message2.setVisibility(View.INVISIBLE);
