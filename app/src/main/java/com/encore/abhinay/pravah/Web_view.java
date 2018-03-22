@@ -72,16 +72,6 @@ public class Web_view extends AppCompatActivity {
             web.goBack();
             return true;
         }
-        BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navigation);
-        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-               MenuItem gh = (MenuItem) findViewById(R.id.web);
-                item = gh;
-                item.setChecked(false);
-                return false;
-            }
-        });
         return super.onKeyDown(keyCode, event);
     }
 }
