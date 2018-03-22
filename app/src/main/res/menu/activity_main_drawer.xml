@@ -76,6 +76,14 @@
                 android:id="@+id/feedback"
                 android:icon="@drawable/feedback_icon"
                 android:title="Feedback" />
+            <item
+                android:id="@+id/rate"
+                android:icon="@android:drawable/btn_star_big_on"
+                android:title="Rate Us" />
+            <item
+                android:id="@+id/share"
+                android:icon="@android:drawable/ic_menu_set_as"
+                android:title="Share" />
         </menu>
     </item>
 
@@ -93,7 +101,7 @@
             <item
                 android:id="@+id/contact1"
                 android:icon="@drawable/ic_contacts_black_48dp"
-                android:title="Contacts" />
+                android:title="Team" />
         </menu>
     </item>
 

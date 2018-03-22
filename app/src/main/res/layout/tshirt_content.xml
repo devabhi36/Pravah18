@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.abhinay.pravah.Tshirt"
+    tools:context="com.encore.abhinay.pravah.Tshirt"
     tools:showIn="@layout/tshirt_layout"
     android:background="#000000">
 
