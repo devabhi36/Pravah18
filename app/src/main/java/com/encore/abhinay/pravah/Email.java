@@ -84,8 +84,8 @@ public class Email extends AppCompatActivity {
     }
     public void back(View back){
         Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(Email.this, PRAVAH.class);
-        startActivity(intent);
+//        Intent intent = new Intent(Email.this, PRAVAH.class);
+//        startActivity(intent);
     }
 
 }

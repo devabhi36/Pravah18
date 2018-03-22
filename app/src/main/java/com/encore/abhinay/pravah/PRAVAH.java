@@ -51,10 +51,11 @@ public class PRAVAH extends Fragment {
     private void setupSlider() {
         sliderView.setDurationScroll(800);
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(FragmentSlider.newInstance("https://photos.google.com/album/AF1QipMg4Ph7D-PLIOPsALVpknpqkothDoTcY-QQuKEy/photo/AF1QipOqeNnEuoN7fvKNz3LjJgv2sFy_MPuof7WcP9nb"));
-        fragments.add(FragmentSlider.newInstance("https://photos.google.com/album/AF1QipMg4Ph7D-PLIOPsALVpknpqkothDoTcY-QQuKEy/photo/AF1QipNE2pN44bZ_hpr3QUUOM9WHqCatxF6OezZ_KrH4"));
-        fragments.add(FragmentSlider.newInstance("https://photos.google.com/album/AF1QipMg4Ph7D-PLIOPsALVpknpqkothDoTcY-QQuKEy/photo/AF1QipP0nv0jRj-XyvlxOKRJKBeebxzqWk_9pIJ1u3a6"));
-        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-4.jpg"));
+        fragments.add(FragmentSlider.newInstance("https://files.dtornado.com/headerimages/wG9Yymvug415189717578aJ6uRl3Jz_header.jpeg"));
+        //fragments.add(FragmentSlider.newInstance("https://image.ibb.co/gKjp0H/img_4.jpg"));
+        fragments.add(FragmentSlider.newInstance("https://img.collegepravesh.com/2016/05/IET-Lucknow.jpg"));
+        fragments.add(FragmentSlider.newInstance("https://www.kclimo.com/wp-content/uploads/2015/02/hot-KC-concert-crowd.jpg"));
+        fragments.add(FragmentSlider.newInstance("http://xcessjeans.com/img/uttar-pradesh.jpg"));
 
         mAdapter = new SliderPagerAdapter(getFragmentManager(), fragments);
         sliderView.setAdapter(mAdapter);
