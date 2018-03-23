@@ -2,6 +2,7 @@ package com.encore.abhinay.pravah;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.util.TimerTask;
 
 public class Login extends AppCompatActivity {
     ImageView loader;
@@ -171,12 +173,13 @@ public class Login extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
-                loader.setVisibility(View.INVISIBLE);
-                waiting = 0;
-
             } else {
-                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Unable to connect to server, check your internet connection.", Toast.LENGTH_SHORT).show();
+
             }
+
+            waiting = 0;
+            loader.setVisibility(View.INVISIBLE);
         }
     }
 
