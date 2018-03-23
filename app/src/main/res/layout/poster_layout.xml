@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.abhinay.pravah.Poster">
+    tools:context="com.encore.abhinay.pravah.Poster">
 
     <include layout="@layout/poster_content" />
 

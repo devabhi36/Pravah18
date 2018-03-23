@@ -4,8 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.abhinay.pravah.Register"
-    android:background="@drawable/register1">
+    tools:context="com.encore.abhinay.pravah.Register">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/ttoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="प्रवाह"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"/>
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -26,8 +40,7 @@
                 android:textSize="20dp"
                 android:layout_marginTop="60dp"
                 android:id="@+id/firstname"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
             <EditText
                 android:layout_width="match_parent"
@@ -36,8 +49,7 @@
                 android:textSize="20dp"
                 android:layout_marginTop="123dp"
                 android:id="@+id/lastname"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
             <EditText
                 android:layout_width="match_parent"
@@ -47,8 +59,7 @@
                 android:layout_marginTop="186dp"
                 android:onClick="dob"
                 android:id="@+id/dob"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <Spinner
@@ -57,8 +68,7 @@
                android:layout_marginTop="249dp"
                android:textSize="30dp"
                android:id="@+id/gender"
-               android:textColorHint="#ffffff"
-               android:textColor="#ffffff"
+               android:textColor="#000"
                android:textStyle="italic"/>
 
             <EditText
@@ -68,8 +78,7 @@
                 android:textSize="20dp"
                 android:layout_marginTop="290dp"
                 android:id="@+id/email"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <EditText
@@ -80,8 +89,7 @@
                 android:layout_marginTop="353dp"
                 android:id="@+id/password"
                 android:inputType="textPassword"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <EditText
@@ -92,8 +100,7 @@
                 android:layout_marginTop="416dp"
                 android:id="@+id/cpassword"
                 android:inputType="textPassword"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
              <EditText
@@ -104,8 +111,7 @@
                 android:inputType="number"
                 android:textSize="20dp"
                 android:layout_marginTop="479dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <TextView
@@ -114,7 +120,7 @@
                 android:text="YOU ARE:"
                 android:textSize="20dp"
                 android:layout_marginTop="542dp"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
           
             <Spinner
@@ -123,8 +129,7 @@
                 android:layout_marginTop="574dp"
                 android:textSize="20dp"
                 android:id="@+id/areyou"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <TextView
@@ -133,7 +138,7 @@
                 android:text="QUALIFIED EVENT 1:"
                 android:textSize="20dp"
                 android:layout_marginTop="636dp"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <Spinner
@@ -142,8 +147,7 @@
                 android:layout_marginTop="668dp"
                 android:textSize="20dp"
                 android:id="@+id/event1"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <TextView
@@ -152,7 +156,7 @@
                 android:text="QUALIFIED EVENT 2:"
                 android:textSize="20dp"
                 android:layout_marginTop="730dp"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <Spinner
@@ -161,8 +165,7 @@
                 android:layout_marginTop="764dp"
                 android:textSize="20dp"
                 android:id="@+id/event2"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <TextView
@@ -171,7 +174,7 @@
                 android:text="QUALIFIED EVENT 3"
                 android:textSize="20dp"
                 android:layout_marginTop="826dp"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <Spinner
@@ -180,8 +183,7 @@
                 android:layout_marginTop="858dp"
                 android:textSize="20dp"
                 android:id="@+id/event3"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
           
             <EditText
@@ -191,8 +193,7 @@
                 android:hint="FATHER'S NAME"
                 android:textSize="20dp"
                 android:layout_marginTop="920dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
           
             <EditText
@@ -202,8 +203,7 @@
                 android:hint="MOTHER'S NAME"
                 android:textSize="20dp"
                 android:layout_marginTop="982dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
           
             <EditText
@@ -213,8 +213,8 @@
                 android:hint="AADHAAR NO."
                 android:textSize="20dp"
                 android:layout_marginTop="1044dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColorHint="#000"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <TextView
@@ -223,7 +223,7 @@
                 android:text="YOUR ZONE:"
                 android:textSize="20dp"
                 android:layout_marginTop="1106dp"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
             
             <Spinner
@@ -232,8 +232,7 @@
                 android:layout_marginTop="1138dp"
                 android:textSize="20dp"
                 android:id="@+id/zone"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <TextView
@@ -242,7 +241,7 @@
                 android:text="TSHIRT SIZE:"
                 android:textSize="20dp"
                 android:layout_marginTop="1200dp"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <Spinner
@@ -251,8 +250,7 @@
                 android:layout_marginTop="1232dp"
                 android:textSize="20dp"
                 android:id="@+id/tshirt"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
 
             <EditText
@@ -262,8 +260,7 @@
                 android:hint="COLLEGE NAME"
                 android:textSize="20dp"
                 android:layout_marginTop="1294dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
           
             <EditText
@@ -273,8 +270,7 @@
                 android:hint="ROLL NO"
                 android:textSize="20dp"
                 android:layout_marginTop="1356dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textStyle="italic"/>
           
             <Button
@@ -288,7 +284,7 @@
                 android:padding="15dp"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
-                android:background="@drawable/registerback4"
+                android:background="@color/colorPrimary"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="1420dp" />
 

@@ -4,10 +4,10 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.example.abhinay.pravah"
+        applicationId "com.encore.abhinay.pravah"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 1
+        versionCode 5
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
@@ -18,6 +18,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+        aaptOptions {
+            cruncherEnabled = false
+        }
 }
 
 dependencies {
@@ -33,6 +36,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:11.0.4'
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.android.support:support-v4:25.2.0'
+    compile 'me.relex:circleindicator:1.2.2@aar'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
     testCompile 'junit:junit:4.12'
     compile 'com.google.firebase:firebase-messaging:9.2.1'
 }

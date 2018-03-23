@@ -2,20 +2,24 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
+    <!--<item
         android:id="@+id/bottomhome"
         android:icon="@drawable/ic_home_black_48dp"
-        android:title="Home" />
-    <item android:title="Pravah"
-        android:id="@+id/web"
-        android:icon="@drawable/ic_theme_black_48dp" />
-    <item android:title="Facebook"
-        android:id="@+id/facebook"
-        android:icon="@drawable/facebook" />
-    <item android:title="Youtube"
-        android:id="@+id/youtube"
-        android:icon="@drawable/youtube"/>
-    <item android:title="Instagram"
-        android:id="@+id/insta"
-        android:icon="@drawable/instagram"/>
-</menu>
+        android:title="Home" />-->
+<item android:title="Pravah"
+android:id="@+id/bweb"
+android:icon="@drawable/cweb"
+android:checked="false"/>
+<item android:title="Facebook"
+android:id="@+id/facebook"
+android:icon="@drawable/cfb"
+android:checked="false"/>
+<item android:title="Youtube"
+android:id="@+id/youtube"
+android:icon="@drawable/cyou"
+android:checked="false"/>
+<item android:title="Instagram"
+android:id="@+id/insta"
+android:icon="@drawable/cinsta"
+android:checked="false"/>
+    </menu>

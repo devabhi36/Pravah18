@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.abhinay.pravah">
+    package="com.encore.abhinay.pravah">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -19,7 +19,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <permission
-        android:name="com.example.maps.permission.MAPS_RECEIVE"
+        android:name="com.encore.maps.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.example.maps.permission.MAPS_RECEIVE" />
@@ -49,7 +49,7 @@
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.abhinay.pravah.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".Band"
@@ -129,7 +129,7 @@
             android:label="@string/title_activity_maps">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.abhinay.pravah.MainActivity" />
+                android:value=".MainActivity" />
             <meta-data
                 android:name="com.google.android.gms.version"
                 android:value="@integer/google_play_services_version" />
@@ -143,6 +143,7 @@
         <activity android:name=".Email" />
         <activity android:name=".Web_view" />
         <activity android:name=".YourTeam" />
+
     </application>
 
 </manifest>

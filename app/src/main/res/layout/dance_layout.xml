@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.abhinay.pravah.Dance">
+    tools:context="com.encore.abhinay.pravah.Dance">
 
     <include layout="@layout/dance_content" />
 
