@@ -144,6 +144,17 @@
         <activity android:name=".Web_view" />
         <activity android:name=".YourTeam" />
 
+        <service android:name=".MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
+            </intent-filter>
+        </service>
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
