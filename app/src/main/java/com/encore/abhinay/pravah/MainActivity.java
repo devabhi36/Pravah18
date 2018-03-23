@@ -25,11 +25,16 @@ import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static int flag = 1;
     public static int new_flag = 0;
     public static int forback = 0;
+
+    public static long startTimer = 0L;
+    public static long elapsedTime = 10000L;
 
     public static String host = "https://encore.ietlucknow.ac.in/app/";
 
@@ -462,17 +467,28 @@ public class MainActivity extends AppCompatActivity
     }
     public void dashboard(View dashboard){
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
-        ft.replace(R.id.content_frame, new Dashboard(), "fragment");
-        ft.commit();
+        elapsedTime = (new Date()).getTime() - startTimer;
 
-        flag = 0;
-        new_flag = 1;
+        if ( elapsedTime > 5000 ) {
 
-        hide_show1();
-        Toast.makeText(getApplicationContext(), "The app might crash due to server error:{ Please try again if it crashes!", Toast.LENGTH_LONG).show();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
+            ft.replace(R.id.content_frame, new Dashboard(), "fragment");
+            ft.commit();
 
+            flag = 0;
+            new_flag = 1;
+
+            hide_show1();
+            //Toast.makeText(getApplicationContext(), "The app might crash due to server error:{ Please try again if it crashes!", Toast.LENGTH_LONG).show();
+
+            startTimer = 0L;
+            elapsedTime = 10000L;
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(), "Please wait for a second..", Toast.LENGTH_SHORT).show();
+        }
     }
     public void changepass(View changepass){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

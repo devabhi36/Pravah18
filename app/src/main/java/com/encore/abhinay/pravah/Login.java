@@ -173,6 +173,9 @@ public class Login extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
+                MainActivity.startTimer = System.currentTimeMillis();
+                MainActivity.elapsedTime = 0L;
+
             } else {
                 Toast.makeText(getApplicationContext(), "Unable to connect to server, check your internet connection.", Toast.LENGTH_SHORT).show();
 
