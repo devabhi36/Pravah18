@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -77,7 +78,7 @@ public class PRAVAH extends Fragment {
              public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                  switch (item.getItemId()){
-                case R.id.web:
+                case R.id.bweb:
                     Web_view.num = 1;
                     Intent i1 = new Intent(getActivity(), Web_view.class);
                     startActivity(i1);

@@ -78,11 +78,11 @@
                 android:title="Feedback" />
             <item
                 android:id="@+id/rate"
-                android:icon="@android:drawable/btn_star_big_on"
+                android:icon="@drawable/star"
                 android:title="Rate Us" />
             <item
                 android:id="@+id/share"
-                android:icon="@android:drawable/ic_menu_set_as"
+                android:icon="@drawable/share"
                 android:title="Share" />
         </menu>
     </item>

@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_home_black_48dp"
         android:title="Home" />-->
 <item android:title="Pravah"
-android:id="@+id/web"
+android:id="@+id/bweb"
 android:icon="@drawable/cweb"
 android:checked="false"/>
 <item android:title="Facebook"

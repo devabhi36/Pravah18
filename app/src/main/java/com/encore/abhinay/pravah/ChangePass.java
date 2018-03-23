@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,13 @@ public class ChangePass extends Fragment {
                     {
                         smallBundle bundle = new smallBundle( oldPassword, newPassword, MainActivity._email );
                         new phpCaller().execute(bundle);
+
+                        FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
+                        ft.replace(R.id.content_frame, new Dashboard(), "fragment");
+                        ft.commit();
+
+
                     }
                     else {
                         Toast.makeText(getContext(), "Password must be atleast 8 characters long.", Toast.LENGTH_SHORT).show();

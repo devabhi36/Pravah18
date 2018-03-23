@@ -143,7 +143,7 @@
         <activity android:name=".Email" />
         <activity android:name=".Web_view" />
         <activity android:name=".YourTeam" />
-        <activity android:name=".SlideShow"></activity>
+
     </application>
 
 </manifest>

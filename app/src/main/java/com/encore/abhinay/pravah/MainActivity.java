@@ -22,6 +22,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -226,12 +227,12 @@ public class MainActivity extends AppCompatActivity
             contact(null);
         } else if (id == R.id.rate) {
             Intent intent=new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("http://www.javatpoint.com"));
+            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.encore.abhinay.pravah"));
             startActivity(intent);
         } else if (id == R.id.share) {
             Intent shareIntent=new Intent(android.content.Intent.ACTION_SEND);
             shareIntent.setType("text/italic");
-            String app_url = " https://play.google.com/store/apps/details?id=my.example.javatpoint";
+            String app_url = "https://play.google.com/store/apps/details?id=com.encore.abhinay.pravah";
             shareIntent.putExtra(Intent.EXTRA_TEXT, app_url);
             startActivity(Intent.createChooser(shareIntent, "Share via"));
         }
@@ -393,8 +394,12 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(getApplicationContext(),"Will be announced shortly :)", Toast.LENGTH_SHORT).show();
     }
     public void map(View v5){
-        Intent map=new Intent(MainActivity.this, Maps.class);
-        startActivity(map);
+//        Intent map=new Intent(MainActivity.this, Maps.class);
+//        startActivity(map);
+        Toast.makeText(getApplicationContext(), "Please Wait", Toast.LENGTH_LONG).show();
+        String url = "https://goo.gl/maps/AxG5zkdjL6G2";
+        WebView webView = new WebView(getApplicationContext());
+        webView.loadUrl(url);
     }
     public void about(View v6){
         Intent about= new Intent(MainActivity.this, About.class);
@@ -456,14 +461,18 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(getApplicationContext(),"Will be announced shortly :)", Toast.LENGTH_SHORT).show();
     }
     public void dashboard(View dashboard){
+
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
         ft.replace(R.id.content_frame, new Dashboard(), "fragment");
         ft.commit();
+
         flag = 0;
         new_flag = 1;
 
         hide_show1();
+        Toast.makeText(getApplicationContext(), "The app might crash due to server error:{ Please try again if it crashes!", Toast.LENGTH_LONG).show();
+
     }
     public void changepass(View changepass){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -494,6 +503,8 @@ public class MainActivity extends AppCompatActivity
     @Override
 
     public boolean onNavigationItemSelected(MenuItem item) {
+        NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
         displaySelectedScreen(item.getItemId());
         return true;
     }
