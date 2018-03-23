@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
     public static int forback = 0;
 
     public static long startTimer = 0L;
-    public static long elapsedTime = 10000L;
+    public static long elapsedTime = 60000L;
 
     public static String host = "https://encore.ietlucknow.ac.in/app/";
 
@@ -469,7 +469,7 @@ public class MainActivity extends AppCompatActivity
 
         elapsedTime = (new Date()).getTime() - startTimer;
 
-        if ( elapsedTime > 5000 ) {
+        if ( elapsedTime > 10000 ) {
 
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
@@ -483,11 +483,11 @@ public class MainActivity extends AppCompatActivity
             //Toast.makeText(getApplicationContext(), "The app might crash due to server error:{ Please try again if it crashes!", Toast.LENGTH_LONG).show();
 
             startTimer = 0L;
-            elapsedTime = 10000L;
+            elapsedTime = 60000L;
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "Please wait for a second..", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Please wait for a few seconds..", Toast.LENGTH_SHORT).show();
         }
     }
     public void changepass(View changepass){
