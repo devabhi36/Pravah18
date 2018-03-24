@@ -163,6 +163,7 @@ public class Login extends AppCompatActivity {
                 MainActivity._tshirt = a[14];
                 MainActivity._transactionID = a[15];
                 MainActivity._transactionStatus = a[16];
+                MainActivity._hostel = a[17];
 
                 Toast.makeText(getApplicationContext(), "Signed In, view your details from the Dashboard.", Toast.LENGTH_SHORT).show();
 
@@ -222,7 +223,7 @@ public class Login extends AppCompatActivity {
 
     private String [ ] decodeResult( String result )
     {
-        String[ ] a = new String[17];
+        String[ ] a = new String[18];
         int count = 0;
         int last = 0;
         for ( int i = 0; i < result.length(); i++ ) {
@@ -281,34 +282,34 @@ public class Login extends AppCompatActivity {
         protected String doInBackground(smallBundle... data) {
             String email = data[0].e;
 
-             try {
+            try {
 
-                 String link = MainActivity.host + "forgot.php";
-                 String data_ = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8");
-                 URL url = new URL(link);
-                 URLConnection conn = url.openConnection();
+                String link = MainActivity.host + "forgot.php";
+                String data_ = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8");
+                URL url = new URL(link);
+                URLConnection conn = url.openConnection();
 
-                 conn.setDoOutput(true);
-                 OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                conn.setDoOutput(true);
+                OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
 
-                 wr.write(data_);
-                 wr.flush();
+                wr.write(data_);
+                wr.flush();
 
-                 BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
-                 StringBuilder sb = new StringBuilder();
-                 String line = null;
+                StringBuilder sb = new StringBuilder();
+                String line = null;
 
-                 // Read Server Response
-                 while ((line = reader.readLine()) != null) {
-                     sb.append(line);
-                     break;
-                 }
+                // Read Server Response
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line);
+                    break;
+                }
 
-                 return sb.toString();
-             } catch (Exception e) {
-                 return new String("Exception: " + e.getMessage());
-             }
+                return sb.toString();
+            } catch (Exception e) {
+                return new String("Exception: " + e.getMessage());
+            }
         }
 
         @Override

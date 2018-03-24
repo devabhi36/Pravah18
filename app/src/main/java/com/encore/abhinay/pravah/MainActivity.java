@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
 
     public static String host = "https://encore.ietlucknow.ac.in/app/";
 
-    public static String _name, _dob, _gender, _email, _mobile, _fathername, _mothername, _aadhaar, _zone, _college, _rollno, _events1, _events2, _events3, _youare, _tshirt, _transactionID, _transactionStatus;
+    public static String _name, _dob, _gender, _email, _mobile, _fathername, _mothername, _aadhaar, _zone, _college, _rollno, _events1, _events2, _events3, _youare, _tshirt, _transactionID, _transactionStatus, _hostel;
     public static String[ ] team = { "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1" };
 
     ViewPager mViewPager;
@@ -271,9 +271,11 @@ public class MainActivity extends AppCompatActivity
         startActivity(theme);
     }
     public void events(View v3){
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Event event = new Event();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
-        ft.replace(R.id.content_frame, new Event(), "fragment");
+        ft.add(R.id.content_frame, event);
+        ft.addToBackStack(null);
         ft.commit();
         flag=0;
 
@@ -298,9 +300,11 @@ public class MainActivity extends AppCompatActivity
             MenuItem home = menuNav.findItem(R.id.home);
             home.setVisible(true);
 
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            Cultural cultural = new Cultural();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
-            ft.replace(R.id.content_frame, new Cultural(), "fragment");
+            ft.add(R.id.content_frame, cultural);
+            ft.addToBackStack(null);
             ft.commit();
             flag=3;
         }
@@ -340,10 +344,12 @@ public class MainActivity extends AppCompatActivity
             MenuItem home = menuNav.findItem(R.id.home);
             home.setVisible(true);
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
-        ft.replace(R.id.content_frame, new Arts(), "fragment");
-        ft.commit();
+            Arts arts = new Arts();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
+            ft.add(R.id.content_frame, arts);
+            ft.addToBackStack(null);
+            ft.commit();
         flag=3;
     }
             public void collage(View v321){
@@ -382,9 +388,11 @@ public class MainActivity extends AppCompatActivity
             MenuItem home = menuNav.findItem(R.id.home);
             home.setVisible(true);
 
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            Others others = new Others();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
-            ft.replace(R.id.content_frame, new Others(), "fragment");
+            ft.add(R.id.content_frame, others);
+            ft.addToBackStack(null);
             ft.commit();
             flag=3;
         }
@@ -471,9 +479,11 @@ public class MainActivity extends AppCompatActivity
 
         if ( elapsedTime > 10000 ) {
 
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            Dashboard dash = new Dashboard();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
-            ft.replace(R.id.content_frame, new Dashboard(), "fragment");
+            ft.add(R.id.content_frame, dash);
+            ft.addToBackStack(null);
             ft.commit();
 
             flag = 0;
@@ -491,9 +501,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
     public void changepass(View changepass){
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ChangePass changePass = new ChangePass();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
-        ft.replace(R.id.content_frame, new ChangePass(), "fragment");
+        ft.add(R.id.content_frame, changePass);
+        ft.addToBackStack(null);
         ft.commit();
 
         hide_show1();
@@ -507,10 +519,13 @@ public class MainActivity extends AppCompatActivity
         hide_show1();
     }
     public void accomadation(View accomadation){
+        Accommodation accommodation = new Accommodation();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
-        ft.replace(R.id.content_frame, new Accommodation(), "fragment");
+        ft.add(R.id.content_frame, accommodation);
+        ft.addToBackStack(null);
         ft.commit();
+
 
         hide_show1();
     }

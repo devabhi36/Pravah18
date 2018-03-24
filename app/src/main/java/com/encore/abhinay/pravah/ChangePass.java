@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,9 +57,12 @@ public class ChangePass extends Fragment {
                         smallBundle bundle = new smallBundle( oldPassword, newPassword, MainActivity._email );
                         new phpCaller().execute(bundle);
 
-                        FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        Dashboard dash = new Dashboard();
+                        FragmentManager fragmentManager = getFragmentManager();
+                        FragmentTransaction ft = fragmentManager.beginTransaction();
                         ft.setCustomAnimations(R.anim.slide_outb, R.anim.fadeout);
-                        ft.replace(R.id.content_frame, new Dashboard(), "fragment");
+                        ft.add(R.id.content_frame, dash);
+                        ft.addToBackStack(null);
                         ft.commit();
 
 

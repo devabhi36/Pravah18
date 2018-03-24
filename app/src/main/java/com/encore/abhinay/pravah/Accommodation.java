@@ -26,7 +26,7 @@ import java.net.URLEncoder;
 
 public class Accommodation extends Fragment {
     CheckBox confirm;
-    TextView message, upi_no, ini_status, fi_status, message1, message2;
+    TextView message, upi_no, ini_status, fi_status, hostel, message1, message2;
     EditText trans_id;
     Button submit;
 
@@ -49,6 +49,7 @@ public class Accommodation extends Fragment {
         upi_no = (TextView)v.findViewById(R.id.upi_no);
         ini_status = (TextView)v.findViewById(R.id.ini_status);
         fi_status = (TextView)v.findViewById(R.id.fi_status);
+        hostel = (TextView)v.findViewById(R.id.hostel);
         message1 = (TextView)v.findViewById(R.id.message1);
         message2 = (TextView)v.findViewById(R.id.message2);
         trans_id = (EditText)v.findViewById(R.id.trans_id);
@@ -79,6 +80,7 @@ public class Accommodation extends Fragment {
         else
         {
             fi_status.setText("Payment Verified.");
+            hostel.setText("Your alloted accomodation: \n"+ MainActivity._hostel);
         }
 
         isChecked = confirm.isChecked();
