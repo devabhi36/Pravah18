@@ -21,6 +21,6 @@ public class Day1 extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle("DAY 1");
+        getActivity().setTitle("DAY 0");
     }
 }

@@ -404,9 +404,9 @@ public class MainActivity extends AppCompatActivity
                 ((Activity) this).overridePendingTransition(0,0);
             }
     public void schedule(View v3){
-//        Intent schedule=new Intent(MainActivity.this, Schedule.class);
-//        startActivity(schedule);
-        Toast.makeText(getApplicationContext(),"Will be announced shortly :)", Toast.LENGTH_SHORT).show();
+        Intent schedule=new Intent(MainActivity.this, Schedule.class);
+        startActivity(schedule);
+        //Toast.makeText(getApplicationContext(),"Will be announced shortly :)", Toast.LENGTH_SHORT).show();
     }
     public void map(View v5){
 //        Intent map=new Intent(MainActivity.this, Maps.class);

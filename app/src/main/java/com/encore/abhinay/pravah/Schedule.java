@@ -76,21 +76,6 @@ public class Schedule extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -143,6 +128,8 @@ public class Schedule extends AppCompatActivity {
                     return day1;
                 case 1: Day2 day2=new Day2();
                     return day2;
+                case 2: Day3 day3=new Day3();
+                    return day3;
             }
             return null;
         }
@@ -150,7 +137,7 @@ public class Schedule extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 2 total pages.
-            return 2;
+            return 3;
         }
 
         @Override
@@ -160,6 +147,8 @@ public class Schedule extends AppCompatActivity {
                     return "Day 1";
                 case 1:
                     return "Day 2";
+                case 2:
+                    return "Day 3";
             }
             return null;
         }
