@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -70,6 +71,7 @@ public class Notifications extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
 
+            //Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
             title.setText(result.substring(0, result.indexOf("+")));
             message.setText(result.substring(result.indexOf("+")+1, result.length()));
         }
