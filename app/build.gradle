@@ -18,9 +18,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-        aaptOptions {
-            cruncherEnabled = false
-        }
+    aaptOptions {
+        cruncherEnabled = false
+    }
 }
 
 dependencies {
@@ -38,7 +38,7 @@ dependencies {
     compile 'com.android.support:support-v4:25.2.0'
     compile 'me.relex:circleindicator:1.2.2@aar'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    testCompile 'junit:junit:4.12'
     compile 'com.google.firebase:firebase-messaging:9.2.1'
+    testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

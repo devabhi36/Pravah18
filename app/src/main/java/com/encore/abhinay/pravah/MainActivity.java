@@ -206,6 +206,8 @@ public class MainActivity extends AppCompatActivity
             schedule(null);
         } else if(id == R.id.map1){
             map(null);
+        } else if (id == R.id.notification) {
+            notification(null);
         } else if (id == R.id.register) {
             register(null);
         } else if(id == R.id.dashboard){
@@ -413,6 +415,10 @@ public class MainActivity extends AppCompatActivity
         String url = "https://goo.gl/maps/AxG5zkdjL6G2";
         WebView webView = new WebView(getApplicationContext());
         webView.loadUrl(url);
+    }
+    public void notification(View vn){
+        Intent i =  new Intent(MainActivity.this, Notifications.class);
+        startActivity(i);
     }
     public void about(View v6){
         Intent about= new Intent(MainActivity.this, About.class);

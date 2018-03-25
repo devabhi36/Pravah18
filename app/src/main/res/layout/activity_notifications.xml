@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.encore.abhinay.pravah.Notifications">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/ttoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="प्रवाह"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/ntitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:textSize="25sp"
+        android:textColor="#800000"
+        android:text="Message"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/nmessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:textSize="20sp"
+        android:textColor="#008000"
+        android:text="This is a new notification for testing the app."
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
