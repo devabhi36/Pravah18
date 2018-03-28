@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.encore.abhinay.pravah">
+    package="com.iet.abhinay.pravah">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -19,7 +19,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <permission
-        android:name="com.encore.maps.permission.MAPS_RECEIVE"
+        android:name="com.iet.maps.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.example.maps.permission.MAPS_RECEIVE" />
@@ -31,7 +31,7 @@
         android:roundIcon="@mipmap/logo_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Splash">
+        <activity android:name="com.iet.abhinay.pravah.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,78 +39,78 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.iet.abhinay.pravah.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Theme"
+            android:name="com.iet.abhinay.pravah.Theme"
             android:label="@string/title_activity_scrolling"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.iet.abhinay.pravah.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.iet.abhinay.pravah.MainActivity" />
         </activity>
         <activity
-            android:name=".Band"
+            android:name="com.iet.abhinay.pravah.Band"
             android:label="@string/title_activity_band"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Play"
+            android:name="com.iet.abhinay.pravah.Play"
             android:label="@string/title_activity_play"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Fashion"
+            android:name="com.iet.abhinay.pravah.Fashion"
             android:label="@string/title_activity_fashion"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Comedy"
+            android:name="com.iet.abhinay.pravah.Comedy"
             android:label="@string/title_activity_comedy"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Singing"
+            android:name="com.iet.abhinay.pravah.Singing"
             android:label="@string/title_activity_singing"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Dance"
+            android:name="com.iet.abhinay.pravah.Dance"
             android:label="@string/title_activity_dance"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Collage"
+            android:name="com.iet.abhinay.pravah.Collage"
             android:label="@string/title_activity_collage"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Tshirt"
+            android:name="com.iet.abhinay.pravah.Tshirt"
             android:label="@string/title_activity_tshirt"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Poster"
+            android:name="com.iet.abhinay.pravah.Poster"
             android:label="@string/title_activity_poster"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Face"
+            android:name="com.iet.abhinay.pravah.Face"
             android:label="@string/title_activity_face"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Rangoli"
+            android:name="com.iet.abhinay.pravah.Rangoli"
             android:label="@string/title_activity_rangoli"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Mehandi"
+            android:name="com.iet.abhinay.pravah.Mehandi"
             android:label="@string/title_activity_mehandi"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Alfaaz"
+            android:name="com.iet.abhinay.pravah.Alfaaz"
             android:label="Alfaaz"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Schedule"
+            android:name="com.iet.abhinay.pravah.Schedule"
             android:label="@string/title_activity_schedule"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".About"
+            android:name="com.iet.abhinay.pravah.About"
             android:label="@string/title_activity_about"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.iet.abhinay.pravah.MainActivity"
             android:theme="@style/AppTheme" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -125,37 +125,37 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Maps"
+            android:name="com.iet.abhinay.pravah.Maps"
             android:label="@string/title_activity_maps">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.iet.abhinay.pravah.MainActivity" />
             <meta-data
                 android:name="com.google.android.gms.version"
                 android:value="@integer/google_play_services_version" />
         </activity>
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
+        <activity android:name="com.iet.abhinay.pravah.Register" />
+        <activity android:name="com.iet.abhinay.pravah.Login" />
         <activity
-            android:name=".Contacts"
+            android:name="com.iet.abhinay.pravah.Contacts"
             android:label="@string/title_activity_contacts"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Email" />
-        <activity android:name=".Web_view" />
-        <activity android:name=".YourTeam" />
+        <activity android:name="com.iet.abhinay.pravah.Email" />
+        <activity android:name="com.iet.abhinay.pravah.Web_view" />
+        <activity android:name="com.iet.abhinay.pravah.YourTeam" />
 
-        <service android:name=".MyFirebaseInstanceIdService">
+        <service android:name="com.iet.abhinay.pravah.MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".MyFirebaseMessagingService">
+        <service android:name="com.iet.abhinay.pravah.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".Notifications"></activity>
+        <activity android:name="com.iet.abhinay.pravah.Notifications"></activity>
     </application>
 
 </manifest>

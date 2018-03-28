@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.encore.abhinay.pravah._sliders.SliderView
+            <com.iet.abhinay.pravah._sliders.SliderView
                 android:id="@+id/sliderView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>

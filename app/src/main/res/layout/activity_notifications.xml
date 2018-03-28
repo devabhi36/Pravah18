@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.encore.abhinay.pravah.Notifications">
+    tools:context="com.iet.abhinay.pravah.Notifications">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
         android:layout_marginTop="90dp"
         android:textSize="25sp"
         android:textColor="#800000"
-        android:text="Message"
+        android:text=""
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_centerHorizontal="true"/>
@@ -48,10 +48,17 @@
         android:layout_marginTop="180dp"
         android:textSize="20sp"
         android:textColor="#008000"
-        android:text="This is a new notification for testing the app."
+        android:text=""
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/loader"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="155dp"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

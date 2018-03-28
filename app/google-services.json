@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "975428218008",
-    "firebase_url": "https://pravah-18.firebaseio.com",
-    "project_id": "pravah-18",
-    "storage_bucket": "pravah-18.appspot.com"
+    "project_number": "37664617338",
+    "firebase_url": "https://pravah18-4957f.firebaseio.com",
+    "project_id": "pravah18-4957f",
+    "storage_bucket": "pravah18-4957f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:975428218008:android:67ac30f141c90c37",
+        "mobilesdk_app_id": "1:37664617338:android:37ccf481013542d0",
         "android_client_info": {
-          "package_name": "com.encore.abhinay.pravah"
+          "package_name": "com.iet.abhinay.pravah"
         }
       },
       "oauth_client": [
         {
-          "client_id": "975428218008-didnc5ln8autg6ke4tmh97uudk429kud.apps.googleusercontent.com",
+          "client_id": "37664617338-ns4i4st6pss9o2v1bh0pbpvg6pkb260g.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD0cVlZZnUu1Yz9BQsUz3MA5mmGXcpfKJE"
+          "current_key": "AIzaSyCzppDuUaQLIhCzmCwGOtmMt7vuzCh222s"
         }
       ],
       "services": {

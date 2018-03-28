@@ -4,11 +4,11 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.encore.abhinay.pravah"
+        applicationId "com.iet.abhinay.pravah"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 5
-        versionName "1.0"
+        versionCode 8
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
     }
