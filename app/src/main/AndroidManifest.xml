@@ -31,7 +31,7 @@
         android:roundIcon="@mipmap/logo_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.iet.abhinay.pravah.Splash">
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,78 +39,78 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.iet.abhinay.pravah.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.iet.abhinay.pravah.Theme"
+            android:name=".Theme"
             android:label="@string/title_activity_scrolling"
-            android:parentActivityName="com.iet.abhinay.pravah.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.iet.abhinay.pravah.MainActivity" />
         </activity>
         <activity
-            android:name="com.iet.abhinay.pravah.Band"
+            android:name=".Band"
             android:label="@string/title_activity_band"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Play"
+            android:name=".Play"
             android:label="@string/title_activity_play"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Fashion"
+            android:name=".Fashion"
             android:label="@string/title_activity_fashion"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Comedy"
+            android:name=".Comedy"
             android:label="@string/title_activity_comedy"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Singing"
+            android:name=".Singing"
             android:label="@string/title_activity_singing"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Dance"
+            android:name=".Dance"
             android:label="@string/title_activity_dance"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Collage"
+            android:name=".Collage"
             android:label="@string/title_activity_collage"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Tshirt"
+            android:name=".Tshirt"
             android:label="@string/title_activity_tshirt"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Poster"
+            android:name=".Poster"
             android:label="@string/title_activity_poster"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Face"
+            android:name=".Face"
             android:label="@string/title_activity_face"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Rangoli"
+            android:name=".Rangoli"
             android:label="@string/title_activity_rangoli"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Mehandi"
+            android:name=".Mehandi"
             android:label="@string/title_activity_mehandi"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Alfaaz"
+            android:name=".Alfaaz"
             android:label="Alfaaz"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.Schedule"
+            android:name=".Schedule"
             android:label="@string/title_activity_schedule"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.iet.abhinay.pravah.About"
+            android:name=".About"
             android:label="@string/title_activity_about"
-            android:parentActivityName="com.iet.abhinay.pravah.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -125,7 +125,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.iet.abhinay.pravah.Maps"
+            android:name=".Maps"
             android:label="@string/title_activity_maps">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -134,28 +134,32 @@
                 android:name="com.google.android.gms.version"
                 android:value="@integer/google_play_services_version" />
         </activity>
-        <activity android:name="com.iet.abhinay.pravah.Register" />
-        <activity android:name="com.iet.abhinay.pravah.Login" />
+        <activity android:name=".Register" />
+        <activity android:name=".Login" />
         <activity
-            android:name="com.iet.abhinay.pravah.Contacts"
+            android:name=".Contacts"
             android:label="@string/title_activity_contacts"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.iet.abhinay.pravah.Email" />
-        <activity android:name="com.iet.abhinay.pravah.Web_view" />
-        <activity android:name="com.iet.abhinay.pravah.YourTeam" />
+        <activity android:name=".Email" />
+        <activity android:name=".Web_view" />
+        <activity android:name=".YourTeam" />
 
-        <service android:name="com.iet.abhinay.pravah.MyFirebaseInstanceIdService">
+        <service android:name=".MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="com.iet.abhinay.pravah.MyFirebaseMessagingService">
+        <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name="com.iet.abhinay.pravah.Notifications"></activity>
+        <activity android:name=".Notifications" />
+        <activity
+            android:name=".Sponcers"
+            android:label="@string/title_activity_sponcers"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

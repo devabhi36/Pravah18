@@ -477,7 +477,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void sponcer(View sponcer){
-        Toast.makeText(getApplicationContext(),"Will be announced shortly :)", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, Sponcers.class);
+        startActivity(intent);
     }
     public void dashboard(View dashboard){
 
